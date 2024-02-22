@@ -12,7 +12,7 @@
 <body>
     <header>
         <h1 class="logo">
-            <a href="javascript:void(0);">
+            <a href="./index.html">
                 <img src="./assets/img/logo.png" alt="">
             </a>
         </h1>
@@ -31,7 +31,7 @@
                     <a href="javascript:void(0);">Service</a>
                     <ul class="sub-wrap">
                         <ul>
-                            <li><a href="javascript:void(0);">서비스 개요</a></li>
+                            <li><a href="./service01.html">서비스 개요</a></li>
                             <li><a href="javascript:void(0);">서비스 모델</a></li>
                             <li><a href="javascript:void(0);">수행역량</a></li>
                         </ul>
@@ -41,8 +41,8 @@
                     <a href="javascript:void(0);">Solution</a>
                     <ul class="sub-wrap">
                         <ul>
-                            <li><a href="javascript:void(0);">솔루션 개요</a></li>
-                            <li><a href="javascript:void(0);">ERP</a></li>
+                            <li><a href="./solution01.html">솔루션 개요</a></li>
+                            <li><a href="./solution02.html">ERP</a></li>
                             <li><a href="javascript:void(0);">POS</a></li>
                             <li><a href="javascript:void(0);">OMS</a></li>
                             <li><a href="javascript:void(0);">WMS</a></li>
@@ -58,7 +58,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:void(0);">Performance</a>
+                    <a href="./performance.html">Performance</a>
                     <!-- <ul class="sub-wrap">
                         <ul>
                             <li>10</li>
@@ -162,7 +162,7 @@
         </ul>
     </header>
     <main id="main">
-        <section>
+        <section id="test">
             <div class="banner main">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
@@ -214,7 +214,7 @@
                 </div>
                 <ul class="side-nav">
                     <li>
-                        <a class="navi" href="#main">
+                        <a class="navi" href="#test">
                             <span class="dot active"></span>
                             <p>Main</p>
                         </a>
@@ -229,12 +229,6 @@
                         <a class="navi" href="#mission">
                             <span class="dot"></span>
                             <p>Mission</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navi" href="#partners">
-                            <span class="dot"></span>
-                            <p>Partners</p>
                         </a>
                     </li>
                     <li>
@@ -396,7 +390,7 @@
 
 
         </section>
-        <section class="sc_intro">
+        <section class="sc_intro" id="mission">
             <div class="mission-tit">
                 <h1>MISSON</h1>
                 <h2>와이제이이노베이션은 풍부한 Retail Solution 개발과 운영경험 및<br>업무 이해력 및 기술력으로 고객에게 무한신뢰를 제공하는<br><strong>Retail
@@ -458,7 +452,7 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer id="contact">
         <div class="footer-wrap">
 
             <div class="layout-md">
@@ -525,13 +519,20 @@
                 sections.forEach((e, idx) => {
                     const sectionTop = e.offsetTop;
                     const sectionHeight = e.clientHeight;
+                
+                    // console.log(scrollY);
+                    // console.log(sectionTop);
+                    // console.log(sectionHeight);
 
                     if (scrollY >= sectionTop - 1 && scrollY < sectionTop + sectionHeight) {
-                        for (let i = 0; i < dots.length; i++) {
-                            dots[i].classList.remove('active');
-                        }
-                        dots[idx].classList.add('active')
+                        // for (let i = 0; i < dots.length; i++) {
+                        //     dots[i].classList.remove('active');
+                        // }
+                        // dots[idx].classList.add('active')
+                        console.log(idx);
                     }
+                    // 스크롤한 값이 타겟과의 간격값보다 크거나 같을때 &&
+                    // 스크롤한 값이 타겟과의 간격값 + 타겟의 height값보다 작을 때  
                 })
             })
         } else {
