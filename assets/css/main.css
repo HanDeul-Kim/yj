@@ -78,7 +78,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    z-index: 2;
+    z-index: 99;
     color: #fff;
     padding: 0 40px;
     background-color: #000;
