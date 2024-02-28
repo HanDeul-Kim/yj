@@ -1,41 +1,26 @@
-const langBtn = document.querySelector('.lang');
-const langList = document.querySelector('.select-box');
-// langBtn.addEventListener('click', () => {
-//     if(langBtn.classList.contains('active')) {
-//         langBtn.classList.remove('active');
-//         gsap.to('.select-box', {
-//             height: '0',
-//             duration: 0.15,
-//         })           
-//     } else {
-//         langBtn.classList.add('active');
-//         gsap.to('.select-box', {
-//             height: '120px',
-//             duration: 0.15,
-//         })
-//     }
 
-// })
+let isLangListOpen = false;
 
-// 리팩토링
-let isLangListOpen = false; // 상태 변수를 도입하여 선택 상자의 상태를 추적합니다.
+// 반복문 lang
+const langBtn2 = document.querySelectorAll('.lang');
+const langList2 = document.querySelectorAll('.select-box');
+langBtn2.forEach( (e, idx) => {
+    e.addEventListener('click', (event) => {
+        isLangListOpen = !isLangListOpen;
+        if(isLangListOpen) {
+            gsap.to(langList2[idx], {
+                height: '120px',
+                duration: 0.15,
+            })
+        } else {
+            gsap.to(langList2[idx], {
+                height: 0,
+                duration: 0.15,
+            })
+        } 
+    })
+})
 
-
-langBtn.addEventListener('click', () => {
-    isLangListOpen = !isLangListOpen; // 상태를 토글합니다.
-
-    if (isLangListOpen) {
-        gsap.to('.select-box', {
-            height: '120px',
-            duration: 0.15,
-        });
-    } else {
-        gsap.to('.select-box', {
-            height: '0',
-            duration: 0.15,
-        });
-    }
-});
 
 const sideNavBtns = document.querySelectorAll('.navi');
 if (sideNavBtns) {
