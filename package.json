@@ -4,7 +4,8 @@
     "express": "^4.18.2",
     "node": "^21.6.2",
     "nodemailer": "^6.9.10",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "swiper": "^11.0.7"
   },
   "name": "yj",
   "version": "1.0.0",
