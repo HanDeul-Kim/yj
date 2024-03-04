@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YJ - 온라인문의</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
@@ -171,7 +172,7 @@
                                     <span>자동등록방지 숫자를 순서대로 입력하세요</span>
                                 </div>
                                 <div class="file-content">
-                                    <div class="spam-img">
+                                    <!-- <div class="spam-img">
                                         <img src="./assets/img/spam.png" alt="">
                                     </div>
                                     <input type="text">
@@ -180,7 +181,9 @@
                                     </label>
                                     <label for="" class="input-btn-white" id="captcha_reload">
                                         새로고침
-                                    </label>
+                                    </label> -->
+                                    <div class="g-recaptcha" data-sitekey="6LdMzoIpAAAAAJopfVbjg4R5J7y96vKKIHrzRxRk">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -305,6 +308,8 @@
             const content = document.getElementById('textarea').value;
 
             const agreeCheck = document.getElementById('agree');
+            // recaptcha
+            const response = grecaptcha.getResponse();
 
             if (name === '') {
                 alert('고객명은 필수 기재 사항입니다.')
@@ -317,6 +322,8 @@
             } else {
                 if (!agreeCheck.checked) {
                     alert('개인정보처리방침에 동의 해주세요.')
+                } else if(response.lenght == 0) {
+                    alert('봇이 아니라면 방지코드에 체크 하세요')
                 } else {
                     axios.post('http://localhost:3000/contact.html', { name, email, tel, title, content })
                         .then(function (response) {
@@ -330,18 +337,8 @@
                         });
                 }
             }
-            // 578346175110
 
-            // axios.post('http://localhost:3000/contact.html', { name, email, tel, title, content })
-            //     .then(function (response) {
-            //         console.log('성공', response.data);
-            //         // 서버 응답에 대한 추가 처리
-            //         alert('완료하였습니다.')
-            //     })
-            //     .catch(function (error) {
-            //         console.error('Error:', error);
-            //         // 오류 처리
-            //     });
+            
         });
     </script>
 
