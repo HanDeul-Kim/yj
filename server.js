@@ -17,7 +17,6 @@ app.post('/contact.html', async (req, res) => {
     await sendEmail(req.body.name, req.body.email, req.body.tel, req.body.title, req.body.content)
     res.send('이메일이 전송되었습니다.');
 });
-
 const sendEmail = async (name, email, tel, title, content) => {
     const transporter = nodemailer.createTransport({
         service: 'naver',
