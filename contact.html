@@ -319,13 +319,12 @@
                 alert('제목은 필수 기재 사항입니다.')
             } else if (content === '') {
                 alert('문의내용은 필수 기재 사항입니다.')
+            } else if (response.length == 0) {
+                alert('봇이 아니라면 방지코드에 체크 하세요')
+            } else if (!agreeCheck.checked) {
+                alert('개인정보처리방침에 동의 해주세요.')
             } else {
-                if (!agreeCheck.checked) {
-                    alert('개인정보처리방침에 동의 해주세요.')
-                } else if(response.lenght == 0) {
-                    alert('봇이 아니라면 방지코드에 체크 하세요')
-                } else {
-                    axios.post('http://localhost:3000/contact.html', { name, email, tel, title, content })
+                axios.post('http://localhost:3000/contact.html', { name, email, tel, title, content })
                         .then(function (response) {
                             console.log('성공', response.data);
                             // 서버 응답에 대한 추가 처리
@@ -335,8 +334,8 @@
                             console.error('Error:', error);
                             // 오류 처리
                         });
-                }
             }
+             
 
             
         });
