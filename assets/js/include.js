@@ -1,4 +1,4 @@
-$('.header').load('./header.html', () => {
+$('.header').load('yj/header.html', () => {
     let isLangListOpen = false;
     // 반복문 lang
     const langBtn2 = document.querySelectorAll('.lang');
@@ -85,4 +85,4 @@ $('.header').load('./header.html', () => {
         })
     }
 });
-$('.footer').load('./footer.html');
+$('.footer').load('yj/footer.html');
