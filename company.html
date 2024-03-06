@@ -5,88 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./assets/lib/aos.css">
+    <link rel="stylesheet" href="./assets/lib/animate.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
-    <header>
-        <h1 class="logo">
-            <a href="javascript:void(0);">
-                <img src="./assets/img/logo.png" alt="">
-            </a>
-        </h1>
-        <div class="gnb-wrap">
-            <ul class="pc-gnb">
-                <li>
-                    <a href="./company.html">Company</a>
-                    <!-- <ul class="sub">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul> -->
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Service</a>
-                    <!-- <ul class="sub">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul> -->
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Solution</a>
-                    <!-- <ul class="sub">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul> -->
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Performance</a>
-                    <!-- <ul class="sub">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul> -->
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Partners</a>
-                    <!-- <ul class="sub">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul> -->
-                </li>
-            </ul>
-            <div class="pan"></div>
-        </div>
-
-        <ul class="header_right">
-            <li>
-                <a class="contact" href="javascript:void(0);">Contact</a>
-            </li>
-            <li>
-                <div class="lang">
-                    <span>KOR</span>
-                    <img src="./assets/img/input-icon01.png" alt="">
-                    <ul class="select-box">
-                        <li><a href="javascript:void(0);">셀렉트1</a></li>
-                        <li><a href="javascript:void(0);">셀렉트2</a></li>
-                        <li><a href="javascript:void(0);">셀렉트3</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </header>
+    <div class="header"></div>
     <main class="solution-overlay">
         <div class="banner detail company">
-            <div class="tit-wrap" data-aos="fade">
-                <h1 class="tit">COMPANY</h1>
-                <p class="sub-tit">
-                    YJ Innovation 소개
-                </p>
+            <div class="layout-md">
+                <div class="tit-wrap" data-aos="fade">
+                    <h1 class="tit">COMPANY</h1>
+                    <p class="sub-tit">
+                        YJ Innovation 소개
+                    </p>
+                </div>
             </div>
         </div>
         <div class="layout-md">
@@ -145,7 +79,7 @@
             </div>
         </section>
         <section class="sec2">
-            <div class="layout-md">
+            <div class="layout-md visible">
                 <div class="tit-wrap" data-aos="fade-up" data-aos-duration="1300">
                     <h1>e_Commerce와 4차 산업혁명 시대에<br>급변하는 리테일 유통업무를 최적으로<br>지원하는 <strong>IT Solution Provider</strong>
                     </h1>
@@ -196,72 +130,109 @@
             <div class="layout-md">
                 <table>
                     <tr data-aos="fade-right" data-aos-duration="1500">
-                        <th class="year">20<b>21</b></th>
+                        <th class="year">20<b>21</b><span>~</span></th>
                         <td>
                             <ul class="project">
-                                <li>e_COM 솔루션 구축</li>
-                                <li>쇼핑몰, SCM, OMS(주문발주)</li>
-                                <li>프로세스자동화(RPA)</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr data-aos="fade-right" data-aos-duration="1500">
-                        <th class="year">20<b>20</b></th>
-                        <td>
-                            <ul class="project">
-                                <li>골프유통 솔루션</li>
-                                <li>Global SI 프로젝트 수행</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr data-aos="fade-right" data-aos-duration="1500">
-                        <th class="year">20<b>17</b></th>
-                        <td>
-                            <ul class="project">
-                                <li>ISO 27001 인증 취득</li>
-                                <li>정부전자영수증 시범사업 수행</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr data-aos="fade-right" data-aos-duration="1500">
-                        <th class="year">20<b>13</b></th>
-                        <td>
-                            <ul class="project">
-                                <li>YJ Innovation 설립</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr data-aos="fade-right" data-aos-duration="1500">
-                        <th class="year">20<b>12</b></th>
-                        <td>
-                            <ul class="project">
-                                <li>패션유통 IT 플랫폼 구축
-                                    <ul>
-                                        <li>- 가두점, 백화점</li>
-                                        <li>- 여성복, 남성복</li>
-                                    </ul>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2021</div>
+                                    <div>
+                                        e_COM 솔루션 구축
+                                    </div>
                                 </li>
-                                <li>패션유통 IT 컨설팅 및 솔루션 구축</li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2021</div>
+                                    <div>
+                                        쇼핑몰, SCM, OMS(주문발주)
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2021</div>
+                                    <div>
+                                        프로세스자동화(RPA)
+                                    </div>
+                                </li>
                             </ul>
                         </td>
                     </tr>
                     <tr data-aos="fade-right" data-aos-duration="1500">
-                        <th class="year">20<b>00</b></th>
+                        <th class="year">20<b>20</b><span>~</span><br>20<b>17</b></th>
                         <td>
                             <ul class="project">
-                                <li>패션유통 사업 지원</li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2020</div>
+                                    <div>
+                                        골프유통 솔루션
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2020</div>
+                                    <div>
+                                        Global SI 프로젝트 수행
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2017</div>
+                                    <div>
+                                        ISO 27001 인증 취득
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2017</div>
+                                    <div>
+                                        정부전자영수증 시범사업 수행
+                                    </div>
+                                </li>
                             </ul>
                         </td>
                     </tr>
                     <tr data-aos="fade-right" data-aos-duration="1500">
-                        <th class="year">19<b>97</b></th>
+                        <th class="year">20<b>16<span>~</span><br>2012</b></th>
                         <td>
                             <ul class="project">
-                                <li>패션유통 사업 지원</li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2013</div>
+                                    <div>
+                                        YJ Innovaition 설립
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2021</div>
+                                    <div class="sub-year-col">
+                                        패션유통 IT 플랫폼 구축
+                                        <ul>
+                                            <li>- 가두점,백화점</li>
+                                            <li>- 여성복, 남성복</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2012</div>
+                                    <div>
+                                        패션유통 IT 솔루션 사업전개
+                                    </div>
+                                </li>
                             </ul>
                         </td>
                     </tr>
-                    
+                    <tr data-aos="fade-right" data-aos-duration="1500">
+                        <th class="year">20<b>11<span>~</span><br>1997</b></th>
+                        <td>
+                            <ul class="project">
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">2000</div>
+                                    <div>
+                                        패션유통 사업 지원
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sub-year" style="align-self: flex-start;">1997</div>
+                                    <div>
+                                        패션유통 IT 솔루션 사업전개
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
                 </table>
                 <!-- <ul class="history">
                     <li data-aos="fade-right" data-aos-duration="1500">
@@ -327,57 +298,11 @@
             </div>
         </div>
       </main>
-    <footer>
-        <div class="footer-wrap">
-            <div class="layout-md">
-                <div class="footer-top">
-                    <div class="footer-top-left">
-                        <a href="javascript:void(0);" class="footer-logo">
-                            <img src="./assets/img/logo.png" alt="">
-                        </a>
-                    </div>
-                    <div class="footer-top-right">
-                        <ul class="company-info">
-                            <li>
-                                <strong class="info-head">ADDRESS</strong>
-                                <p class="info-text">서울시 성동구 연무장5가길 7, 현대테라스타워 E903호</p>
-                            </li>
-                            <li>
-                                <strong class="info-head">TEL</strong>
-                                <p class="info-text">02-2038-4513. 010-3879-9002</p>
-                            </li>
-                            <li>
-                                <strong class="info-head">E-MAIL</strong>
-                                <p class="info-text">mgpark8@yjinno.co.kr</p>
-                            </li>
-                            <li>
-                                <strong class="info-head">대표</strong>
-                                <p class="info-text">박명관</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bar"></div>
-            <div class="layout-md">
-                <div class="footer-bottom">
-                    <div class="footer-bottom-left">
-                        <span>COPYRIGHT © YJ INNOVATION CO.,LTD. All RIGHTS RESERVED.</span>
-                    </div>
-                    <div class="footer-bottom-right">
-                        <ul>
-                            <li><a href="javascript:void(0);">개인정보 취급방침</a></li>
-                            <li><a href="javascript:void(0);">이용약관</a></li>
-                            <li><a href="javascript:void(0);">이메일무단수집거부</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <div class="footer"></div>
+    <script src="./assets/lib/jquery.min.js"></script>
+    <script src="./assets/lib/aos.js"></script>
+    <script src="./assets/lib/gsap.min.js"></script>
+    <script src="./assets/js/include.js"></script>
     <script src="./assets/js/main.js"></script>
 
 </body>

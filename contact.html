@@ -5,55 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YJ - 온라인문의</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <script src="./assets/lib/recaptcha.js" async defer></script>
+
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
-    <header>
-        <h1 class="logo">
-            <a href="javascript:void(0);">
-                <img src="./assets/img/logo.png" alt="">
-            </a>
-        </h1>
-        <div class="gnb-wrap">
-            <ul class="pc-gnb">
-                <li>
-                    <a href="./company.html">Company</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Service</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Solution</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Performance</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Partners</a>
-                </li>
-            </ul>
-            <div class="pan"></div>
-        </div>
-
-        <ul class="header_right">
-            <li>
-                <a class="contact" href="javascript:void(0);">Contact</a>
-            </li>
-            <li>
-                <div class="lang">
-                    <span>KOR</span>
-                    <img src="./assets/img/input-icon01.png" alt="">
-                    <ul class="select-box">
-                        <li><a href="javascript:void(0);">셀렉트1</a></li>
-                        <li><a href="javascript:void(0);">셀렉트2</a></li>
-                        <li><a href="javascript:void(0);">셀렉트3</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </header>
+    <div class="header"></div>
     <main>
         <div class="banner detail contact">
             <div class="tit-wrap" data-aos="fade">
@@ -230,57 +189,12 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="footer-wrap">
-            <div class="layout-md">
-                <div class="footer-top">
-                    <div class="footer-top-left">
-                        <a href="javascript:void(0);" class="footer-logo">
-                            <img src="./assets/img/logo.png" alt="">
-                        </a>
-                    </div>
-                    <div class="footer-top-right">
-                        <ul class="company-info">
-                            <li>
-                                <strong class="info-head">ADDRESS</strong>
-                                <p class="info-text">서울시 성동구 연무장5가길 7, 현대테라스타워 E903호</p>
-                            </li>
-                            <li>
-                                <strong class="info-head">TEL</strong>
-                                <p class="info-text">02-2038-4513. 010-3879-9002</p>
-                            </li>
-                            <li>
-                                <strong class="info-head">E-MAIL</strong>
-                                <p class="info-text">mgpark8@yjinno.co.kr</p>
-                            </li>
-                            <li>
-                                <strong class="info-head">대표</strong>
-                                <p class="info-text">박명관</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bar"></div>
-            <div class="layout-md">
-                <div class="footer-bottom">
-                    <div class="footer-bottom-left">
-                        <span>COPYRIGHT © YJ INNOVATION CO.,LTD. All RIGHTS RESERVED.</span>
-                    </div>
-                    <div class="footer-bottom-right">
-                        <ul>
-                            <li><a href="javascript:void(0);">개인정보 취급방침</a></li>
-                            <li><a href="javascript:void(0);">이용약관</a></li>
-                            <li><a href="javascript:void(0);">이메일무단수집거부</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div class="footer"></div>
     <!-- axios cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/lib/jquery.min.js"></script>
+    <script src="./assets/lib/axios.min.js"></script>
+    <script src="./assets/lib/gsap.min.js"></script>
+    <script src="./assets/js/include.js"></script>
     <script>
         function selectEmail(ele) {
             const email2 = document.querySelector('#email2');
@@ -335,8 +249,6 @@
                             // 오류 처리
                         });
             }
-             
-
             
         });
     </script>
