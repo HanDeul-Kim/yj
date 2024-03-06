@@ -238,7 +238,7 @@
             } else if (!agreeCheck.checked) {
                 alert('개인정보처리방침에 동의 해주세요.')
             } else {
-                axios.post('/server.js', { name, email, tel, title, content })
+                axios.post('https://port-0-test-17xco2lltffzc0y.sel5.cloudtype.app/', { name, email, tel, title, content })
                         .then(function (response) {
                             console.log('성공', response.data);
                             // 서버 응답에 대한 추가 처리
