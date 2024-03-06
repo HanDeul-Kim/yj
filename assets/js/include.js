@@ -74,8 +74,7 @@ $('.header').load('header.html', () => {
             })
         }
 
-        
-         
+
 
 
         const mGnbMenu = document.querySelectorAll('.m-gnb-list li');

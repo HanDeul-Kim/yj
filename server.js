@@ -10,6 +10,9 @@ const cors = require('cors');
 app.use(cors()) 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('', (req,res) => {
+    res.sendFile(__dirname + '/contact.html')
+})
 //    /submit
 app.post('/contact.html', async (req, res) => {
     console.log('데이터:', req.body);
