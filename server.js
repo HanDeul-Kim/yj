@@ -11,10 +11,10 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('', (req,res) => {
-    res.sendFile(__dirname + '/https://handeul-kim.github.io/yj/contact.html')
+    res.sendFile(__dirname + '/contact.html')
 })
 //    /submit
-app.post('/https://handeul-kim.github.io/yj/contact.html', async (req, res) => {
+app.post('/contact.html', async (req, res) => {
     console.log('데이터:', req.body);
     
     await sendEmail(req.body.name, req.body.email, req.body.tel, req.body.title, req.body.content)
