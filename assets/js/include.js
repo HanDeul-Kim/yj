@@ -1,4 +1,4 @@
-$('.header').load('/header.html', () => {
+$('.header').load('header.html', () => {
     let isLangListOpen = false;
     // 반복문 lang
     const langBtn2 = document.querySelectorAll('.lang');
@@ -69,9 +69,13 @@ $('.header').load('/header.html', () => {
             el.forEach((e) => {
                 e.forEach((e) => {
                     e.classList.remove('active')
+                    e.classList
                 })
             })
         }
+
+        
+         
 
 
         const mGnbMenu = document.querySelectorAll('.m-gnb-list li');
@@ -85,4 +89,6 @@ $('.header').load('/header.html', () => {
         })
     }
 });
-$('.footer').load('/footer.html');
+$('.footer').load('footer.html');
+
+
