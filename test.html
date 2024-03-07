@@ -4,30 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reCAPTCHA Example</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/lib/swiper.min.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Document</title>
 </head>
 
 <body>
-    <!-- header include -->
-    <div class="header"></div>
-    <h1 class="hi" style="margin-top:80px;">header includes</h1>
-    <!-- <form id="myForm" action="#">
-        <div class="g-recaptcha" data-sitekey="6LdMzoIpAAAAAJopfVbjg4R5J7y96vKKIHrzRxRk"></div>
-        <br />
-        <button type="button" id="submitBtn">Submit</button>
-    </form> -->
-    <div class="footer"></div>
-    <script src="./assets/lib/jquery.min.js"></script>
-    <script src="./assets/lib/aos.js"></script>
-    <script src="./assets/lib/swiper.min.js"></script>
-    <script src="./assets/lib/gsap.min.js"></script>
-    <script src="./assets/lib/ScrollTrigger.min.js"></script>
-    <script src="./assets/lib/ScrollToPlugin.min.js"></script>
-    <script src="./assets/js/swiper.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <div class="input-group">
+        <input type="text" id="name">
+        <input type="text" id="email">
+    </div>
+    <button type="submit" id="submit">문의하기</button>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+            const mail1 = document.getElementById('email').value;
+            axios.post('http://localhost:3000/contact.html', { name, email, tel, title, content })
+                .then(function (response) {
+                    console.log('성공', response.data);
+                    // 서버 응답에 대한 추가 처리
+                    alert('완료하였습니다.')
+                })
+                .catch(function (error) {
+                    console.error('Error:', error);
+                    // 오류 처리
+                });
+        });
+    </script>
 </body>
 
 </html>
