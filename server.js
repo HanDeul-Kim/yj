@@ -46,9 +46,15 @@ const sendEmail = async (name, email, tel, title, content) => {
         from: 'tjdtnyj@naver.com',
         to: 'tjdtnyj@naver.com',
         subject: `${title}`,
+        // html: `
+        //     <div class="container"></div>
+        //     <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}/p><p>${content}</p>
+        // `,
         html: `
-            <div class="container"></div>
+            <div class="container">
+            <p style="background:red; color:blue;">이메일 내용</p>
             <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}/p><p>${content}</p>
+            </div>
         `
     }
     
