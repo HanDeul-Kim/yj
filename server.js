@@ -15,14 +15,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     res.sendFile(__dirname + '/contact.html')
 // })
 
-app.use('/', express.static("./public"))
-app.get('/express', (req,res) => {
-    res.render("contact.html")
-})
+// app.use('/', express.static("./public"))
+// app.get('/express', (req,res) => {
+//     res.render("contact.html")
+// })
 
 
 //    /submit
-app.post('/express', (req, res) => {
+app.post('/contact.html', (req, res) => {
     res.send("<h1>psot요청</h1>")
 })
 // app.post('/submit', async (req, res) => {

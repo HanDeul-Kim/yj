@@ -38,7 +38,8 @@
                         표시는 필수입력
                     </span>
                 </div>
-                <form class="form-main" method="post" action="/express">
+                <!-- action="/api/post/edit" method="POST" -->
+                <div class="form-main">
                     <div class="col-group">
                         <div class="input-group w50">
                             <label for="name">
@@ -47,7 +48,7 @@
                                     <span></span>
                                 </div>
                             </label>
-                            <input type="text" placeholder="홍길동" id="name" name="name">
+                            <input type="text" placeholder="홍길동" id="name">
                         </div>
                         <div class="input-group w50">
                             <label for="email">
@@ -67,7 +68,6 @@
                                     <option value="1">직접입력</option>
                                 </select>
                             </div>
-                            <input type="text" id="email" name="email">
                         </div>
                     </div>
                     <div class="col-group">
@@ -81,7 +81,6 @@
                                 <input type="text" id="tel2">
                                 <span>-</span>
                                 <input type="text" id="tel3">
-                                <input type="text" id="tel" name="tel">
                             </div>
                         </div>
                         <div class="input-group w50">
@@ -90,7 +89,7 @@
                                     <span></span>
                                 </div>
                             </label>
-                            <input type="text" id="title" name="title">
+                            <input type="text" id="title">
                         </div>
                     </div>
                     <div class="col-group">
@@ -102,7 +101,6 @@
                                 </div>
                             </label>
                             <textarea name="" id="textarea" cols="30" rows="10"></textarea>
-                            <input type="text" id="content" name="content">
                         </div>
                     </div>
                     <div class="col-group">
@@ -187,7 +185,7 @@
                     <div class="input-submit">
                         <button type="submit" id="submit">문의하기</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </main>
@@ -211,47 +209,47 @@
             }
         }
 
-        // document.getElementById('submit').addEventListener('click', function () {
-        //     const name = document.getElementById('name').value;
-        //     const mail1 = document.getElementById('email1').value;
-        //     const mail2 = document.getElementById('email2').value;
-        //     const email = `${mail1}@${mail2}`
-        //     const tel1 = document.getElementById('tel1').value;
-        //     const tel2 = document.getElementById('tel2').value;
-        //     const tel3 = document.getElementById('tel3').value;
-        //     const tel = `${tel1}-${tel2}-${tel3}`
-        //     const title = document.getElementById('title').value;
-        //     const content = document.getElementById('textarea').value;
+        document.getElementById('submit').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+            const mail1 = document.getElementById('email1').value;
+            const mail2 = document.getElementById('email2').value;
+            const email = `${mail1}@${mail2}`
+            const tel1 = document.getElementById('tel1').value;
+            const tel2 = document.getElementById('tel2').value;
+            const tel3 = document.getElementById('tel3').value;
+            const tel = `${tel1}-${tel2}-${tel3}`
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('textarea').value;
 
-        //     const agreeCheck = document.getElementById('agree');
-        //     // recaptcha
-        //     const response = grecaptcha.getResponse();
+            const agreeCheck = document.getElementById('agree');
+            // recaptcha
+            const response = grecaptcha.getResponse();
 
-        //     if (name === '') {
-        //         alert('고객명은 필수 기재 사항입니다.')
-        //     } else if (mail1 === '' || mail2 === '') {
-        //         alert('이메일은 필수 기재 사항입니다.')
-        //     } else if (title === '') {
-        //         alert('제목은 필수 기재 사항입니다.')
-        //     } else if (content === '') {
-        //         alert('문의내용은 필수 기재 사항입니다.')
-        //     } else if (response.length == 0) {
-        //         alert('봇이 아니라면 방지코드에 체크 하세요')
-        //     } else if (!agreeCheck.checked) {
-        //         alert('개인정보처리방침에 동의 해주세요.')
-        //     } else {
-        //         axios.post('/submit', { name, email, tel, title, content })
-        //                 .then(function (response) {
-        //                     console.log('성공', response.data);
-        //                     // 서버 응답에 대한 추가 처리
-        //                     alert('완료하였습니다.')
-        //                 })
-        //                 .catch(function (error) {
-        //                     console.error('Error:', error);
-        //                     // 오류 처리
-        //                 });
-        //     }
-        // });
+            if (name === '') {
+                alert('고객명은 필수 기재 사항입니다.')
+            } else if (mail1 === '' || mail2 === '') {
+                alert('이메일은 필수 기재 사항입니다.')
+            } else if (title === '') {
+                alert('제목은 필수 기재 사항입니다.')
+            } else if (content === '') {
+                alert('문의내용은 필수 기재 사항입니다.')
+            } else if (response.length == 0) {
+                alert('봇이 아니라면 방지코드에 체크 하세요')
+            } else if (!agreeCheck.checked) {
+                alert('개인정보처리방침에 동의 해주세요.')
+            } else {
+                axios.post('https://port-0-test-17xco2lltffzc0y.sel5.cloudtype.app/contact.html', { name, email, tel, title, content })
+                        .then(function (response) {
+                            console.log('성공', response.data);
+                            // 서버 응답에 대한 추가 처리
+                            alert('완료하였습니다.')
+                        })
+                        .catch(function (error) {
+                            console.error('Error:', error);
+                            // 오류 처리
+                        });
+            }
+        });
     </script>
 
 </body>
