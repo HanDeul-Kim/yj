@@ -11,9 +11,9 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// app.get('', (req,res) => {
-//     res.sendFile(__dirname + '/contact.html')
-// })
+app.get('', (req,res) => {
+    res.sendFile(__dirname + '/contact.html')
+})
 
 // app.use('/', express.static("./public"))
 // app.get('/express', (req,res) => {
