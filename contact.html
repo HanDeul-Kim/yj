@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YJ - 온라인문의</title>
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-    <script src="./assets/lib/recaptcha.js" async defer></script>
+    <!-- <script src="./assets/lib/recaptcha.js" async defer></script> -->
 
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- <link rel="stylesheet" href="./assets/css/main.css"> -->
 </head>
 
 <body>
@@ -191,10 +191,15 @@
     </main>
     <div class="footer"></div>
     <!-- axios cdn -->
-    <script src="./assets/lib/jquery.min.js"></script>
+    <!-- <script src="./assets/lib/jquery.min.js"></script>
     <script src="./assets/lib/axios.min.js"></script>
     <script src="./assets/lib/gsap.min.js"></script>
-    <script src="./assets/js/include.js"></script>
+    <script src="./assets/js/include.js"></script> -->
+
+    <!-- http://localhost:3000/assets/lib/axios.min.js -->
+    <!-- <script src="./assets/lib/axios.min.js"></script> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         function selectEmail(ele) {
             const email2 = document.querySelector('#email2');
@@ -223,7 +228,7 @@
 
             const agreeCheck = document.getElementById('agree');
             // recaptcha
-            const response = grecaptcha.getResponse();
+            // const response = grecaptcha.getResponse();
 
             if (name === '') {
                 alert('고객명은 필수 기재 사항입니다.')
@@ -233,12 +238,10 @@
                 alert('제목은 필수 기재 사항입니다.')
             } else if (content === '') {
                 alert('문의내용은 필수 기재 사항입니다.')
-            } else if (response.length == 0) {
-                alert('봇이 아니라면 방지코드에 체크 하세요')
             } else if (!agreeCheck.checked) {
                 alert('개인정보처리방침에 동의 해주세요.')
             } else {
-                axios.post('/contact.html', { name, email, tel, title, content })
+                axios.post('/submit', { name, email, tel, title, content })
                         .then(function (response) {
                             console.log('성공', response.data);
                             // 서버 응답에 대한 추가 처리
@@ -249,6 +252,7 @@
                             // 오류 처리
                         });
             }
+            
         });
     </script>
 
