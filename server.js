@@ -15,14 +15,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     res.sendFile(__dirname + '/contact.html')
 // })
 
-app.use('/', express.static("./public"))
-app.get('/', (req,res) => {
-    res.render("contact.html")
-})
+// app.use('/', express.static("./public"))
+// app.get('/', (req,res) => {
+//     res.render("contact.html")
+// })
 
 
 //    /submit
-app.post('/contact.html', async (req, res) => {
+app.post('/submit', async (req, res) => {
     console.log('데이터:', req.body);
     
     await sendEmail(req.body.name, req.body.email, req.body.tel, req.body.title, req.body.content)
