@@ -369,6 +369,7 @@
                 email2.value = ele.value;
             }
         }
+        150 - 100
 
         document.getElementById('submit').addEventListener('click', function () {
             const name = document.getElementById('name').value;
@@ -410,6 +411,16 @@
             }
             
         });
+
+        async function fetchData() {
+            const response = await fetch('/data')
+            const data = await response.json();
+            // document.getElementById('message').innerText = '메세지' + data.message;
+            // document.getElementById('number').innerText = '숫자' + data.number;
+            console.log(data.message);
+        }
+
+        window.onload = fetchData
     </script>
 
 </body>

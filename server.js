@@ -22,8 +22,9 @@ app.get('/', (req,res) => {
     res.sendFile(__dirname + '/contact.html')
 })
 
-
-
+app.get('/data', (req, res) => {
+    res.json(data);
+})
 
 
 
