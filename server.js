@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+require('dotenv').config()
 const cors = require('cors'); 
 app.use(cors()) 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,7 +40,7 @@ const sendEmail = async (name, email, tel, title, content) => {
         service: 'naver',
         host: 'smtp.naver.com',
         port: 587,
-        auth: { user: 'tjdtnyj@naver.com', pass: '1q2w3e4r'}
+        auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD}
     })
 
     const mailOptions = {
