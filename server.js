@@ -8,8 +8,8 @@ const port = 3000;
 // ejs
 // app.set('view engine', 'ejs');
 // 루트 설정
-app.use('/assets', express.static('assets'));
-
+// app.use('/assets', express.static('assets'));
+app.use(express.static(__dirname));
 
 app.use(bodyParser.json());
 require('dotenv').config()
