@@ -39,6 +39,9 @@ app.get('/contact', (req, res) => {
         sitekey: process.env.SITE_KEY,
     })
 })
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+})
 
 
 
@@ -47,6 +50,8 @@ app.post('/submit', async (req, res) => {
     
     await sendEmail(req.body.name, req.body.email, req.body.tel, req.body.title, req.body.content)
     res.send('이메일이 전송되었습니다.');
+    
+    console.log('submit 완료')
 });
 const sendEmail = async (name, email, tel, title, content) => {
     const transporter = nodemailer.createTransport({
