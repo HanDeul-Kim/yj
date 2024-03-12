@@ -8,7 +8,7 @@ const port = 3000;
 // ejs
 // app.set('view engine', 'ejs');
 // 루트 설정
-// app.use('/assets', express.static('test'));
+app.use('/assets', express.static('assets'));
 
 
 app.use(bodyParser.json());
