@@ -40,9 +40,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //         sitekey: process.env.SITE_KEY,
 //     })
 // })
+
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
+
+
+
+
 app.get('/test', (req, res) => {
     res.render('contact.html')
 })
