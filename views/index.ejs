@@ -9,14 +9,13 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
-<link rel="stylesheet" href="/assets/css/main.css">
+<!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
     <!-- <link rel="stylesheet" href="/main.css"> -->
     <title>YJ INNOVATION</title>
 </head>
 
 <body>
     <!-- header -->
-    <%- include('header.ejs') %>
     <main id="main">
         <section>
             <div class="banner main">
@@ -315,47 +314,7 @@
         </div>
     </main>
     <!-- footer -->
-    <%- include('footer.ejs') %>
-    <!-- <script src="/assets/lib/jquery.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- <script src="/assets/lib/aos.js"></script> -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- <script src="/assets/lib/swiper.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- <script src="/assets/lib/gsap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-                                                                                    
-                                                                                    
-    <!-- <script src="/assets/lib/ScrollTrigger.min.js"></script>
-    <script src="/assets/lib/ScrollToPlugin.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <script src="/assets/js/swiper.js"></script>
-    <!-- <script src="/assets/js/include.js"></script> -->
-    <script src="/assets/js/main.js"></script>
-    <script>
-        const dots = document.querySelectorAll('.dot');
-        if (dots) {
-            const sections = document.querySelectorAll('section');
-            // 스크롤에 따라 side nav 활성화
-            window.addEventListener('scroll', () => {
-                sections.forEach((e, idx) => {
-                    const sectionTop = e.offsetTop;
-                    const sectionHeight = e.clientHeight;
-
-                    if (scrollY >= sectionTop - 1 && scrollY < sectionTop + sectionHeight) {
-                        for (let i = 0; i < dots.length; i++) {
-                            dots[i].classList.remove('active');
-                        }
-                        dots[idx].classList.add('active')
-                    }
-                })
-            })
-        } else {
-            console.log('없음')
-        }
-    </script>
+  
 </body>
 
 </html>
