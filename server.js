@@ -8,7 +8,10 @@ const port = 3000;
 // ejs
 app.set('view engine', 'ejs');
 // 루트 설정
-app.use('/assets', express.static('assets'));
+// app.use('/assets', express.static('test'));
+app.use(express.static('assets'));
+
+
 app.use(bodyParser.json());
 require('dotenv').config()
 const cors = require('cors'); 
@@ -16,6 +19,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //    /submit
+
 
 
 
@@ -30,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     let data = {
 //         siteKey: process.env.SITE_KEY
 //     };
-//     res.send(data);
+    // res.send(data);
 // });
 
 app.get('/contact', (req, res) => {
