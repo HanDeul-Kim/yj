@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 // ejs
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 // 루트 설정
 // app.use('/assets', express.static('test'));
 
@@ -40,9 +40,9 @@ app.get('/', (req,res) => {
 //         sitekey: process.env.SITE_KEY,
 //     })
 // })
-app.get('/', (req, res) => {
-    res.render('index.ejs')
-})
+// app.get('/', (req, res) => {
+//     res.render('index.ejs')
+// })
 app.get('/test', (req, res) => {
     res.render('test.ejs')
 })
