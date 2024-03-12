@@ -5,6 +5,11 @@ const nodemailer = require('nodemailer');
 const app = express();
 const port = 3000;
 
+// ejs
+app.set('view engine', 'ejs');
+// 루트 설정
+app.use('/assets', express.static('assets'));
+
 app.use(bodyParser.json());
 require('dotenv').config()
 const cors = require('cors'); 
@@ -18,15 +23,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/contact.html')
+// app.get('/', (req,res) => {
+//     res.sendFile(__dirname + '/contact.html',)
+// })
+// app.get('/sitekey', (req, res) => {
+//     // 데이터를 원하는대로 처리
+//     let data = {
+//         siteKey: process.env.SITE_KEY
+//     };
+//     res.send(data);
+// });
+
+app.get('/contact', (req, res) => {
+    res.render('test.ejs', {
+        sitekey: process.env.SITE_KEY,
+    })
 })
-
-app.get('/data', (req, res) => {
-    res.json(data);
-})
-
-
 
 
 
@@ -43,7 +55,7 @@ const sendEmail = async (name, email, tel, title, content) => {
         port: 587,
         auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD}
     })
-
+    
     const mailOptions = {
         from: 'tjdtnyj@naver.com',
         to: 'tjdtnyj@naver.com',
