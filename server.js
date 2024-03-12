@@ -26,19 +26,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.get('/', (req,res) => {
 //     res.sendFile(__dirname + '/contact.html',)
 // })
-app.get('/sitekey', (req, res) => {
-    // 데이터를 원하는대로 처리
-    let data = {
-        siteKey: process.env.SITE_KEY
-    };
-    res.send(data);
-});
+// app.get('/sitekey', (req, res) => {
+//     // 데이터를 원하는대로 처리
+//     let data = {
+//         siteKey: process.env.SITE_KEY
+//     };
+//     res.send(data);
+// });
 
-// app.get('/contact', (req, res) => {
-//     res.render('test.ejs', {
-//         sitekey: process.env.SITE_KEY,
-//     })
-// })
+app.get('/contact', (req, res) => {
+    res.render('test.ejs', {
+        sitekey: process.env.SITE_KEY,
+    })
+})
 
 
 
