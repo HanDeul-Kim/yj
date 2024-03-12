@@ -9,7 +9,6 @@ const port = 3000;
 app.set('view engine', 'ejs');
 // 루트 설정
 // app.use('/assets', express.static('test'));
-app.use(express.static('views'));
 
 
 app.use(bodyParser.json());
@@ -25,9 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-// app.get('/', (req,res) => {
-//     res.sendFile(__dirname + '/contact.html',)
-// })
+app.get('/', (req,res) => {
+    res.sendFile(__dirname + '/contact.html',)
+})
 // app.get('/sitekey', (req, res) => {
 //     // 데이터를 원하는대로 처리
 //     let data = {
@@ -36,11 +35,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
     // res.send(data);
 // });
 
-app.get('/contact', (req, res) => {
-    res.render('contact.ejs', {
-        sitekey: process.env.SITE_KEY,
-    })
-})
+// app.get('/contact', (req, res) => {
+//     res.render('contact.ejs', {
+//         sitekey: process.env.SITE_KEY,
+//     })
+// })
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
