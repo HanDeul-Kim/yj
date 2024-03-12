@@ -8,9 +8,8 @@ const port = 3000;
 // ejs
 // app.set('view engine', 'ejs');
 // 루트 설정
-// app.use('/assets', express.static('assets'));
+app.use('/assets', express.static('assets'));
 // app.use(express.static(__dirname));
-app.use(express.static('img'));
 
 
 app.use(bodyParser.json());
@@ -19,22 +18,21 @@ const cors = require('cors');
 app.use(cors()) 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 //    /submit
 
 
 
+// app.get('/', (req,res) => {
+//     res.sendFile(__dirname + '/index.html',)
+// })
 
-
-
-app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/index.html',)
-})
 // app.get('/sitekey', (req, res) => {
 //     // 데이터를 원하는대로 처리
 //     let data = {
 //         siteKey: process.env.SITE_KEY
 //     };
-    // res.send(data);
+//     res.send(data);
 // });
 
 // app.get('/contact', (req, res) => {
@@ -42,9 +40,9 @@ app.get('/', (req,res) => {
 //         sitekey: process.env.SITE_KEY,
 //     })
 // })
-// app.get('/', (req, res) => {
-//     res.render('index.ejs')
-// })
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+})
 app.get('/test', (req, res) => {
     res.render('contact.html')
 })
