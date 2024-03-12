@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/contact.html',)
+    res.sendFile(__dirname + '/index.html',)
 })
 // app.get('/sitekey', (req, res) => {
 //     // 데이터를 원하는대로 처리
@@ -44,7 +44,7 @@ app.get('/', (req,res) => {
 //     res.render('index.ejs')
 // })
 app.get('/test', (req, res) => {
-    res.render('test.ejs')
+    res.render('contact.html')
 })
 
 
