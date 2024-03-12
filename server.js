@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 const port = 3000;
+const fs = require('fs');
 
 // ejs
 app.set('view engine', 'ejs');
@@ -41,12 +42,22 @@ app.get('/contact', (req, res) => {
         sitekey: process.env.SITE_KEY,
     })
 })
+fs.readFile('index.ejs', (err, data) => {
+    if (err) {
+        console.error('파일을 읽는 도중 오류가 발생했습니다:', err);
+        return;
+    }
+    console.log('파일 내용:', data.toString());
+    // 여기에 필요한 처리 작업을 추가합니다.
+});
 app.get('/', (req, res) => {
     res.render('index.ejs')
+    
 })
 app.get('/test', (req, res) => {
     res.render('test.ejs')
 })
+
 
 
 
