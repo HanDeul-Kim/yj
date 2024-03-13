@@ -233,7 +233,7 @@
 
             const agreeCheck = document.getElementById('agree');
             // recaptcha
-            // const response = grecaptcha.getResponse();
+            const response = grecaptcha.getResponse();
 
             if (name === '') {
                 alert('고객명은 필수 기재 사항입니다.')
@@ -243,6 +243,8 @@
                 alert('제목은 필수 기재 사항입니다.')
             } else if (content === '') {
                 alert('문의내용은 필수 기재 사항입니다.')
+            } else if (response.length == 0) {
+                alert('봇이 아니라면 방지코드에 체크 하세요')
             } else if (!agreeCheck.checked) {
                 alert('개인정보처리방침에 동의 해주세요.')
             } else {
