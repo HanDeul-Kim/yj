@@ -18,7 +18,6 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-//    /submit
 
 
 
@@ -42,6 +41,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.render('index.ejs')
+})
+app.get('/test', (req, res) => {
+    res.render('test.ejs')
 })
 app.get('/contact', (req, res) => {
     res.render('contact.ejs')

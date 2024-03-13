@@ -8,9 +8,9 @@
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
     <!-- <script src="/assets/lib/recaptcha.js" async defer></script> -->
     <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
-    <script src="/assets/css/main.css"></script>
     <script src="/assets/lib/aos.css"></script>
     <script src="/assets/lib/recaptcha.js" async defer></script>
+    <script src="/assets/css/main.css"></script>
 </head>
 
 <body>
@@ -143,7 +143,7 @@
                                     <label for="" class="input-btn-white" id="captcha_reload">
                                         새로고침
                                     </label> -->
-                                    <div class="g-recaptcha" data-sitekey="<%= process.env.SITE_KEY %>">
+                                    <div class="g-recaptcha" data-sitekey="">
                                     </div>
                                 </div>
                             </div>
@@ -200,12 +200,11 @@
 
     <!-- http://localhost:3000/assets/lib/axios.min.js -->
     <!-- <script src="/assets/lib/axios.min.js"></script> -->
-    <script src="https://handeul-kim.github.io/yj/assets/lib/jquery.min.js"></script>
-    <script src="https://handeul-kim.github.io/yj/assets/lib/axios.min.js"></script>
-    <script src="https://handeul-kim.github.io/yj/assets/lib/gsap.min.js"></script>
-    <script src="https://handeul-kim.github.io/yj/assets/lib/aos.js"></script>
-    <script src="https://handeul-kim.github.io/yj/assets/js/include.js"></script>
-    <script src="https://handeul-kim.github.io/yj/assets/js/main.js"></script>
+    <script src="/assets/lib/jquery.min.js"></script>
+    <script src="/assets/lib/axios.min.js"></script>
+    <script src="/assets/lib/gsap.min.js"></script>
+    <script src="/assets/lib/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
     <script>
         function selectEmail(ele) {
             const email2 = document.querySelector('#email2');
@@ -260,7 +259,6 @@
                             // 오류 처리
                         });
             }
-            
         });
 
         // fetch('/sitekey')
