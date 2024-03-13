@@ -43,13 +43,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
-
-
-
-
-app.get('/test', (req, res) => {
-    res.render('contact.html')
+app.get('/contact', (req, res) => {
+    res.render('contact.ejs')
 })
+
+
 
 
 
