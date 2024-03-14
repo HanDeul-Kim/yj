@@ -26,7 +26,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.get('/contact', (req, res) => {
 //     res.render('contact.ejs')
 // })
-
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+})
 
 app.get('/:id', (req, res) => {
     const contactId = req.params.id;
