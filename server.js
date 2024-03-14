@@ -20,35 +20,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-
-// app.get('/', (req,res) => {
-//     res.sendFile(__dirname + '/index.html',)
+// app.get('/', (req, res) => {
+//     res.render('index.html')
 // })
-
-// app.get('/sitekey', (req, res) => {
-//     // 데이터를 원하는대로 처리
-//     let data = {
-//         siteKey: process.env.SITE_KEY
-//     };
-//     res.send(data);
-// });
-
 // app.get('/contact', (req, res) => {
-//     res.render('contact.ejs', {
-//         sitekey: process.env.SITE_KEY,
-//     })
+//     res.render('contact.ejs')
 // })
 
 
-app.get('/', (req, res) => {
-    res.render('index.ejs')
+app.get('/:id', (req, res) => {
+    const contactId = req.params.id;
+    res.render(`${contactId}.ejs`)
 })
-app.get('/test', (req, res) => {
-    res.render('test.ejs')
-})
-app.get('/contact', (req, res) => {
-    res.render('contact.ejs')
-})
+
 
 
 

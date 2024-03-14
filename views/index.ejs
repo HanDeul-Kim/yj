@@ -56,65 +56,18 @@
                         </span>
                     </a>
 
-                    <a href="javascript:void(0);" class="text-wrap">
+                    <a href="/contact" class="text-wrap">
                         <span class="go-contact">
                             <img src="/assets/img/contact.png" alt="">
                         </span>
                         <b class="contact-text">온라인 문의하기</b>
                     </a>
                 </div>
-                <ul class="side-nav">
-                    <li>
-                        <a class="navi" href="#main">
-                            <span class="dot active"></span>
-                            <p>Main</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navi" href="#business">
-                            <span class="dot"></span>
-                            <p>Business</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navi" href="#mission">
-                            <span class="dot"></span>
-                            <p>Mission</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navi" href="#partners">
-                            <span class="dot"></span>
-                            <p>Partners</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navi" href="#contact">
-                            <span class="dot"></span>
-                            <p>Contact</p>
-                        </a>
-                    </li>
-                </ul>
+                
             </div>
         </section>
         <section id="business">
-            <!-- <div class="left_con"></div>
-            <div class="right_con">
-                <div class="parallax-tit">
-                    <div class="tit-wrap">
-                        <h1 class="tit">BUSINESS</h1>
-                        <p class="sub-tit">
-                           리테일 업무에 대한 정확한 이해, 고객중심,통합<br>Platform 제공 역량을 보유하여 고객에게<br><strong>우수한 IT서비스</strong>를 제공합니다. 
-                        </p>
-                    </div>
-                    <div class="view-more">
-                        <a href="javascript:void(0);">
-                            <span>Read more</span>
-                            <img src="/assets/img/read_more.png " alt="">
-                        </a>
-                    </div>
-                </div>
-            </div> -->
+         
 
             <!-- parallax -->
             <div class="parallax-wrap">
@@ -130,9 +83,9 @@
                         </p>
                     </div>
                     <div class="view-more">
-                        <a href="javascript:void(0);">
+                        <a href="/solution01">
                             <span>Read more</span>
-                            <img src="/assets/img/read_more.png " alt="">
+                            <img src="/assets/img/read_more.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -147,9 +100,9 @@
                         </p>
                     </div>
                     <div class="view-more">
-                        <a href="javascript:void(0);">
+                        <a href="/solution02">
                             <span>Read more</span>
-                            <img src="/assets/img/read_more.png " alt="">
+                            <img src="/assets/img/read_more.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -170,7 +123,7 @@
                     <div class="view-more">
                         <a href="javascript:void(0);">
                             <span>Read more</span>
-                            <img src="/assets/img/read_more.png " alt="">
+                            <img src="/assets/img/read_more.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -189,9 +142,9 @@
                         </p>
                     </div>
                     <div class="view-more">
-                        <a href="javascript:void(0);">
+                        <a href="/solution03">
                             <span>Read more</span>
-                            <img src="/assets/img/read_more.png " alt="">
+                            <img src="/assets/img/read_more.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -211,7 +164,7 @@
                         </p>
                     </div>
                     <div class="view-more">
-                        <a href="javascript:void(0);">
+                        <a href="/solution05">
                             <span>Read more</span>
                             <img src="/assets/img/read_more.png" alt="">
                         </a>
@@ -232,9 +185,9 @@
                         </p>
                     </div>
                     <div class="view-more">
-                        <a href="javascript:void(0);">
+                        <a href="/solution07">
                             <span>Read more</span>
-                            <img src="/assets/img/read_more.png " alt="">
+                            <img src="/assets/img/read_more.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -302,7 +255,7 @@
                     <div class="contact_right">
                         <a href="/contact">
                             <p>문의하기</p>
-                            <img src="/assets/img/contact_me.png " alt="">
+                            <img src="/assets/img/contact_me.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -319,28 +272,6 @@
     <script src="/assets/lib/ScrollToPlugin.min.js"></script>
     <script src="/assets/js/swiper.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script>
-        const dots = document.querySelectorAll('.dot');
-        if (dots) {
-            const sections = document.querySelectorAll('section');
-            // 스크롤에 따라 side nav 활성화
-            window.addEventListener('scroll', () => {
-                sections.forEach((e, idx) => {
-                    const sectionTop = e.offsetTop;
-                    const sectionHeight = e.clientHeight;
-
-                    if (scrollY >= sectionTop - 1 && scrollY < sectionTop + sectionHeight) {
-                        for (let i = 0; i < dots.length; i++) {
-                            dots[i].classList.remove('active');
-                        }
-                        dots[idx].classList.add('active')
-                    }
-                })
-            })
-        } else {
-            console.log('없음')
-        }
-    </script>
 </body>
 
 </html>
