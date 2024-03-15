@@ -1,28 +1,3 @@
-// include
-
-
-
-
-const sideNavBtns = document.querySelectorAll('.navi');
-if (sideNavBtns) {
-    sideNavBtns.forEach((anchor) => {
-        anchor.addEventListener('click', (e) => {
-            e.preventDefault();
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: {
-                    x: 0,
-                    y: `${anchor.getAttribute('href')}`,
-                    ease: "power3.out"
-                },
-                // callback
-                // onComplete: () => {
-                //     alert('test')
-                // }
-            })
-        })
-    })
-}
 
 
 let ww = window.innerWidth;
@@ -39,6 +14,7 @@ const shrinkTl = gsap.timeline({
         // duration:50
     },
 });
+
 
 shrinkTl.to("#business .parallax-wrap", {
     scale: 0.4,

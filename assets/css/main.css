@@ -1278,7 +1278,12 @@ table td {
     position: relative;
     cursor: pointer;
 }
-.service-gallery li a img {
+.service-gallery li > a {
+    display:block;
+    height:100%;
+    font-size: 0;
+}
+.service-gallery li > a > img {
     width: 100%;
     object-fit: cover;
 }
@@ -1299,7 +1304,7 @@ table td {
     width: 100%;
     height: 100%;
     padding: 24px;
-    display:flex;
+    display:inline-flex;
     flex-direction: column;
     justify-content: space-between;
     transition: 0.5s;
@@ -1310,11 +1315,21 @@ table td {
     font-weight: 700;
     color:#fff;
 }
+
 .service-gallery .gallery-content .view-more {
-    align-self: flex-end;
+    align-self:flex-end;
+    display:flex;
+    flex-direction: column;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
+}
+.service-gallery .gallery-content .view-more span {
+    font-size: 14px;
+    color:#fff;
+}
+.service-gallery .gallery-content .view-more {
+    width:auto;
 }
 .solution-list-wrap {
     padding-bottom: 200px;
@@ -1428,6 +1443,9 @@ table td {
     width: 48px;
     height: 48px;
 }
+
+
+
 .service-model.type1 .model-lists li {
     background-color: rgba(0, 139, 245, 0.05);
 }

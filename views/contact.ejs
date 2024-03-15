@@ -197,7 +197,7 @@
     <!-- <script src="/assets/lib/jquery.min.js"></script>
     <script src="/assets/lib/axios.min.js"></script>
     <script src="/assets/lib/gsap.min.js"></script>
-    <script src="/assets/js/include.js"></script> -->
+     -->
 
     <!-- http://localhost:3000/assets/lib/axios.min.js -->
     <!-- <script src="/assets/lib/axios.min.js"></script> -->
@@ -244,8 +244,6 @@
                 alert('제목은 필수 기재 사항입니다.')
             } else if (content === '') {
                 alert('문의내용은 필수 기재 사항입니다.')
-            } else if (response.length == 0) {
-                alert('봇이 아니라면 방지코드에 체크 하세요')
             } else if (!agreeCheck.checked) {
                 alert('개인정보처리방침에 동의 해주세요.')
             } else {
@@ -263,24 +261,6 @@
                         });
             }
         });
-
-        // fetch('/sitekey')
-        // .then(response => response.json())
-        // .then(data => {
-        //     // 데이터를 사용하는 코드
-        //     console.log(data.siteKey);
-        // });
-
-        // fetch('/sitekey')
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         const divElement = document.querySelector('div[data-sitekey]');
-        //         if(divElement) {
-        //             divElement.setAttribute('data-sitekey', data.siteKey);
-        //         } else {
-        //             console.error('could not find div with data-sitekey attribute');
-        //         }
-        //     })
 
     </script>
 

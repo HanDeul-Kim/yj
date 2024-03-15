@@ -9,22 +9,12 @@ const port = 3000;
 app.set('view engine', 'ejs');
 // 루트 설정
 app.use('/assets', express.static('assets'));
-
-
 app.use(bodyParser.json());
 require('dotenv').config()
 const cors = require('cors'); 
 app.use(cors()) 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-
-// app.get('/', (req, res) => {
-//     res.render('index.html')
-// })
-// app.get('/contact', (req, res) => {
-//     res.render('contact.ejs')
-// })
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
@@ -33,6 +23,7 @@ app.get('/:id', (req, res) => {
     const contactId = req.params.id;
     res.render(`${contactId}.ejs`)
 })
+
 
 
 
@@ -51,23 +42,39 @@ const sendEmail = async (name, email, tel, title, content) => {
         service: 'naver',
         host: 'smtp.naver.com',
         port: 587,
-        auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD}
+        auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD},  
+        attachment:  attachment
     })
     
+
+
+
+    
+
     const mailOptions = {
         from: 'tjdtnyj@naver.com',
         to: 'tjdtnyj@naver.com',
         subject: `${title}`,
         // html: `
-        //     <div class="container"></div>
+        //     <div class="container">
+        //     <p style="background:red; color:blue;">이메일 내용</p>
         //     <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}/p><p>${content}</p>
-        // `,
-        html: `
-            <div class="container">
-            <p style="background:red; color:blue;">이메일 내용</p>
-            <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}/p><p>${content}</p>
+        //     </div>
+        // `
+        html:`
+            <div>
+                <div style="font-size:18px;">${name}</div>
+                <div style="font-size:18px;">${email}</div>
+                <div style="font-size:18px;">${title}</div>
+                <div style="font-size:18px;">content : </div>
+                <div style="font-size:20px;">${content}</div>
             </div>
-        `
+        `, 
+        attachments: [{
+            filename:'logo.png',
+            path:'logo.png'
+        }]
+        // attachments: [ {path: file} ]
     }
     
     try {
