@@ -43,7 +43,6 @@ const sendEmail = async (name, email, tel, title, content) => {
         host: 'smtp.naver.com',
         port: 587,
         auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD},  
-        attachment:  attachment
     })
     
 
