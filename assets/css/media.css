@@ -1,0 +1,438 @@
+
+@media(max-width:1386px) {
+    /*서비스 개요*/
+    .solution-list-wrap{
+        padding: 0 16px 180px;
+    }
+    .solution-list{
+        gap:40px;
+    }
+    .certification-box{
+        width: 85%;
+    }
+    
+    .sec2 .tit-wrap{
+        right:16px;
+    }
+}
+@media (max-width: 1024px) {
+    /*서비스 개요*/
+    .solution-list{
+        gap:30px;
+    }
+    .solution-list li{
+        min-height: auto;
+    }
+    .solution-list li a{
+        padding: 40px 32px;
+        gap:40px;
+    }
+    .certification-head p{
+        font-size: 48px;
+    }
+    .certification-text p{
+        font-size: 24px;
+    }
+    .service-gallery .gallery-content h1{
+        font-size: 20px;
+    }
+    .solution-list .list-content p br{
+        display: none;
+    }
+    /*솔루션*/
+    .solution-items > li{
+        gap:16px;
+    }
+    .solution-item-info{
+        flex-direction: column;
+        gap:8px;
+    }
+    .solution-item-info .info-list{
+        margin-left: 16px;;
+    }
+    .solution-item-info .info-list{
+        gap:4px;
+    }
+    .solution-item-info .info-head{
+        font-size: 16px;
+    }
+    .layout-md.visible.card.type1{
+        padding:0;
+    }
+    .cards.type1{
+        padding:40px 32px;
+        border-radius: 0;
+    }
+    .cards .card{
+        width: calc(50% - 16px);
+    }
+    .layout-md.visible.card.type1 .cards{
+        gap:32px;
+    }
+    .layout-md.visible.card.type2{
+        padding:0;
+    }
+    .solution-slider{
+        padding:60px 0 ;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        border-radius: 0px;
+    }
+    .mySwiper2{
+        width: 80%;
+        margin:0;
+    }
+    .slider-list,.slider-list ul{
+        align-items: center;
+    }
+    .layout-md.visible.card + .layout-md.visible.card{
+        margin-top: 80px;
+        padding-bottom: 0;
+    }
+    .mySwiper2 .swiper-pagination{
+        margin-top: 24px;
+    }
+
+    /*푸터*/
+    
+    .footer-top{
+        padding: 32px 0 40px;
+        flex-direction: column;
+        gap: 32px;
+    }
+    .footer-bottom{
+        flex-direction: column-reverse;
+        gap: 16px;
+        padding:24px 0px;
+    }
+    .footer-bottom-right ul{
+        gap:16px;
+    }
+    .footer-top-right ul li{
+        align-items: flex-start;
+    }
+    .footer-bottom-right ul li a,
+    .footer-bottom-left span{
+        font-size: 14px;
+    }
+    /*company*/
+    .banner.detail.company{
+        margin-bottom:48px
+    }
+    .sol-list{
+        margin-top: 16px;
+    }
+    .sol-list li{
+        height: 400px;
+    }
+    .sol-content{
+        padding:16px;
+    }
+    .sol-list li .sol-content-bottom{
+        font-size: 16px;
+        margin-top: 72px;
+    }
+    .sol-list li .sol-content-bottom br{
+        display: none;
+    }
+    .sol-table .pc-tbl{
+        display: none;
+    }
+    .sol-table .m-tbl{
+        display: block;
+    }
+    .sol-table .m-tbl th{
+        width: 30%;
+        padding:16px;
+    }
+    .sol-table .m-tbl td{
+        width: 70%;
+    }
+    .sol-tit p{
+        font-size: 16px;
+    }
+    .sol-content-top h1{
+        font-size: 40px;
+    }
+    .sec2 .tit-wrap h1{
+        font-size: 20px;
+    }
+    .sec2 .tit-wrap p{
+        font-size: 16px;
+        margin-top: 16px;
+    }
+    .sec2 .tit-wrap{
+        left:16px;
+    }
+    .sec2{
+        height: 280px;
+        margin-top: 34px;
+        margin-bottom: 64px;
+    }
+    .sec2 .tit-wrap{
+        top:40px;
+    }
+    .sol-tit{
+        padding-bottom: 0;
+    }
+    .sol-table table{
+        margin-bottom: 54px;
+    }
+}
+
+@media(max-width:800px) {
+    /*공통*/
+    .page-tab{
+        margin:32px 0 0px;
+        gap:16px;
+        /* width: 100%; */
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y:hidden;
+        padding-bottom: 12px;
+    }
+    .page-tab::-webkit-scrollbar{
+        height: 6px;
+        background-color: #fff;
+    }
+    .page-tab::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: #E6E7EA;
+        border: 2px solid transparent;
+      }
+    .page-tab.type1{
+        margin:32px 0 32px;
+    }
+    .page-tab a{
+        padding:8px 12px;
+        font-size: 16px;
+        line-height: 24px;
+        vertical-align: bottom;
+        height: 36px;
+        white-space: nowrap;
+    }
+    .banner.detail{
+        height: 324px;
+        /* background-position: 30% 50% */
+    }
+    .banner.detail .tit-wrap h1{
+        font-size: 16px;
+    }
+    .banner.detail .tit-wrap p{
+        font-size: 24px;
+    }
+    .page-tit h2{
+        margin-bottom: 8px;
+    }
+    .page-tit p{
+        font-size: 20px;
+    }
+    .page-tit {
+        margin-bottom: 24px;
+    }
+    .page-tit.type3{   
+        margin-bottom: 24px;
+    }
+    .layout-md > .page-tit.type2 {
+        margin-bottom: 28px;
+    }
+
+
+    /*서비스 개요*/
+    .solution-list .list-content h1{
+        font-size: 20px;
+    }
+    .solution-list{
+        flex-direction:column;
+    }
+    .solution-list li{
+        width: 100%;
+    }
+    .gallery-container,
+    .solution-list-wrap {
+        padding-bottom: 64px;
+    }
+    .certification-box{
+        width: 70%;
+    }
+    .certification-content{
+        flex-direction: column;
+        left: -30%;
+        gap:0px;
+    }
+    .certification-head p{
+        display: none;
+    }
+    .certification {
+        margin-bottom: 72px;  
+    }
+    .certification-box{
+        padding: 24px 0 48px;
+    }
+    /*서비스 모델*/
+    .model-lists{
+        gap:20px;
+    }
+    .service-model.type1 .model-lists li{
+        padding:24px 64px;
+        min-height: auto;
+    }
+    .service-model.type2 .model-lists li, .service-model.type3 .model-lists li{
+        padding:12px 16px;
+        min-height: auto;
+    }
+    .service-model h1{
+        font-size: 18px;
+    }
+    .model-lists li span{
+        font-size: 16px;
+    }
+    .model-lists li img{
+        width: 32px;
+        height: 32px;
+    }
+    .service-models{
+        gap:64px;
+        padding-bottom: 64px;
+    }
+    /*수행역량*/
+    .circle-img{
+        text-align: center;
+    }
+    .circle-img img{
+        max-width: 400px;
+    }
+    .circle-graph{
+        margin-bottom: 72px;
+    }
+
+    /*솔루션*/
+    .solution-items > li{
+        flex-direction: column;
+    }
+    .solution-item-img{
+        flex-basis: auto;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .solution-item-img img{
+        height: 100px;
+        object-fit: cover;
+    }
+    .solution-items{
+        gap:16px;
+        padding-bottom: 72px;
+    }
+    .solution-item-img h1{
+        font-size: 20px;
+    }
+    
+    .cards.type1{
+        padding:64px 16px;
+    }
+    .cards .card{
+        width: calc(50% - 8px);
+        gap:16px;
+        padding: 20px 16px;
+    }
+    .layout-md.visible.card.type1 .cards{
+        gap:16px;
+    }
+    .cards .card .card-text h1{
+        font-size: 16px;
+    }
+    .cards .card .card-text p{
+        font-size: 14px;
+    }
+    /*수행실적*/
+    .banner.performance + .layout-md{
+        margin-top: 32px;
+    }
+    .projects > ul{
+        gap:16px;
+    }
+    /*Infomation*/
+    .information-tit{
+        font-size: 20px;
+        margin-bottom: 32px;
+    }
+    .information-content > ul > li > h2{
+        margin-bottom: 0;;
+    }
+    .lg-tit{
+        margin-bottom: 8px;
+    }
+    .information-content > ul{
+        gap:16px;
+    }
+    .information-content{
+        padding-bottom: 72px;
+    }
+
+    /*company*/
+    .sol-list{
+        flex-direction: column;
+    }
+    .sol-list li.active .sol-content-bottom{
+        padding-top: 70px;
+    }
+    .sol-history table{
+        margin-bottom: 64px;
+    }
+    .sol-history table tr{
+        flex-direction: column;
+        padding-left: 16px;
+        margin-bottom: 0px;
+    }
+    .sol-history .year{
+        margin-bottom: -6px;
+    }
+}
+@media(max-width:600px) {
+    /*서비스 개요*/
+    .certification-img img {
+        width: 100%;
+    }
+    .certification-text p{
+        font-size: 18px;
+    }
+    .service-model.type1 .model-lists li{
+        width: 45%;
+        padding:24px 32px;
+    }
+
+    .solution-item-info .info-list li{
+        font-size: 13px;
+    }
+    /*수행실적*/
+    .projects > ul{
+        gap:16px;
+    }
+    .projects > ul > li{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:16px
+    }
+    .projects .project-content > ul{
+        gap:8px;
+    }
+    .projects .project-img{
+        width: 100%;
+        height: 100px;
+    }
+    .projects .project-img img{
+        max-height: 90px;
+    }
+    .projects{
+        padding-bottom: 72px;
+    }
+
+    /*company*/
+    .sol-tit p br,.sec2 .tit-wrap h1 br,
+    .sec2 .tit-wrap p br{
+        display: none;
+    }
+    
+
+}

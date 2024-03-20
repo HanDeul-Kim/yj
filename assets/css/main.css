@@ -822,7 +822,7 @@ header .select-box li a:hover {
 
 /* footer */
 footer {
-    background-color: #000;
+    background-color: #0a0c14;
     color: #fff;
 }
 
@@ -1072,21 +1072,21 @@ footer {
 }
 .sec2 {
     position: relative;
-    margin-top: 300px;
-    margin-bottom: 200px;
-    height: 565px;
+    margin-top: 196px;
+    margin-bottom: 156px;
+    height: 520px;
     background-image: url('../img/earth.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background-position: center 40%;
+    /* background-attachment: fixed; */
 }
 .sec2 .layout-md {
     position: relative;
 }
 .sec2 .tit-wrap {
     position: absolute;
-    top: -100px;
+    top: -40px;
     right: 0;
     color:#fff;
 }
@@ -1116,6 +1116,7 @@ table td {
     color:#fff;
 }
 .sol-table table {
+    border-top: 2px solid #008bf5;
     margin-bottom: 150px;
 }
 .sol-table tr {
@@ -1123,30 +1124,33 @@ table td {
 }
 .sol-table th,td {
     text-align: left;
+    padding: 22px 0;
+    vertical-align: middle;
 }
 .sol-table th {
     color:#7B7E89;
     font-size: 16px;
+    padding-right: 8px;
 }
 .sol-table td {
-    display:flex;
-    align-items: flex-start;
     font-size: 16px;
     color:#F4F4F5;
 }
 .sol-table td a {
     color:#fff;
 }
-
+.sol-table .m-tbl{
+    display:none;
+}
 
 .sol-history .year {
     height: 100%;
     font-size: 32px;
     font-weight: 800;
     color: transparent;
-    -webkit-text-stroke: 1px #fff;
-    font-family: "Malgun Gothic";
+    -webkit-text-stroke: 0.5px #fff;
     text-align: left;
+    padding-top: 16px;
 }
 .sol-history .year > span {
     font-family: 'Noto Sans KR', sans-serif;
@@ -1187,13 +1191,15 @@ table td {
     width: 100%;
 }
 .sol-history table {
-    width:auto; 
+    width: 100%; 
     background:none;
+    border-top: 2px solid #008bf5;
+    margin-bottom: 160px;
 }
 .sol-history table tr {
     display:flex;
     align-items: flex-start;
-    margin-bottom: 56px;
+    margin-bottom: 36px;
     padding-left:24px;
 }
 .sol-history table tr:last-child {
@@ -1252,10 +1258,10 @@ table td {
     margin-bottom: 44px;
 }
 .page-tit.type2 {
-    margin-bottom: 88px;
+    margin-bottom: 54px;
 }
 .page-tit.type3 {
-    margin-bottom: 64px;
+    margin-bottom: 54px;
 }
 .page-tit h2 {
     font-size: 16px;
@@ -1332,7 +1338,7 @@ table td {
     width:auto;
 }
 .solution-list-wrap {
-    padding-bottom: 200px;
+    padding: 0 20px 200px 20px;
 }
 .solution-list {
     display:flex;
@@ -1372,12 +1378,15 @@ table td {
 .certification {
     display:flex;
     justify-content: flex-end;
+    margin-bottom: 160px;
 }
 .certification-box {
     position: relative;
     background-color: #F4F4F5;
     width: 70%;
     padding:70px 0;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 .certification-head {
     position: absolute;
@@ -1521,7 +1530,7 @@ table td {
 }
 .graph-content h1 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     color: #181C2F;
 }
 .graph-content ul li {
@@ -1845,10 +1854,12 @@ table td {
     gap:40px;
     padding:40px 48px;
     border-radius: 20px;
-    background-color: rgba(5, 52, 92, 0.7);
+    background-color: rgba(5, 52, 92, 0.8);
+    backdrop-filter: blur(10px);
 }
 .cards .card .card-num {
     font-size: 24px;
+    font-weight: bold;
     color:#008BF5;
 }
 .cards .card .card-text h1 {
@@ -1866,8 +1877,9 @@ table td {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    height: 700px;
     background-color: rgba(176, 206, 242, 0.15);
+    border-radius: 0px 40px 40px 0px;
+    padding:96px 48px;
 }
 .slider-list {
     display:flex;
@@ -1930,6 +1942,8 @@ table td {
 }
 .note-book {
     position: relative;
+    min-width: 700px;
+    margin: 0 auto;
 }
 .frame {
     width: 100%;
@@ -1956,11 +1970,13 @@ table td {
 }
 
 .custom_bullet {
+    max-width:100px;
     width: 20% !important;
     border: 2px solid #D0D2D7;
     border-radius: 8px;
     opacity: 0.7;
     cursor: pointer;
+    overflow: hidden;
 }
 .swiper-pagination-custom-bullet-active {
     opacity: 1;
@@ -2000,6 +2016,7 @@ table td {
     width: calc(50% - 16px);
     padding: 20px;
     box-shadow: 0px 4px 24px 4px #02376414;
+    border-radius: 20px;
 }
 .projects .project-img {
     display:flex;
@@ -2072,7 +2089,6 @@ table td {
 .input-group {
     display:flex;
     flex-direction: column;
-    justify-content: flex-end;
 }
 .input-group input,
 .input-group select,
@@ -2255,6 +2271,28 @@ textarea::-webkit-scrollbar-thumb {
     cursor: pointer;
     margin-bottom: 134px;
 }
+#file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    display:none;
+}
+.file-name {
+    display:flex;
+    align-items: center;
+    border: 1px solid #d0d2d7;
+    min-height: 48px;
+    flex:1 1 auto;
+    width: 100%;
+    padding: 12px 16px;
+    color:#63656e;
+    font-size: 14px;
+    font-family:'Noto Sans KR', sans-serif;
+}
 /********************* information *********************/
 .information-tit {
     margin-bottom: 48px;
@@ -2331,14 +2369,7 @@ textarea::-webkit-scrollbar-thumb {
         width: 100%;
     }
 }
-@media (max-width: 1024px) {}
-
-@media(max-width:768px) {
-    .service-gallery {
-        grid-template-columns:repeat(3, 1fr);
-    }
-}
-@media(max-width:600px) {
+@media (max-width: 1024px) {
     header {
         height: 80px;
         padding: 20px 16px;
@@ -2352,8 +2383,11 @@ textarea::-webkit-scrollbar-thumb {
     header .m-gnb-wrap {
         display: block;
     }
+}
+
+@media(max-width:768px) {
     .service-gallery {
-        grid-template-columns:repeat(2, 1fr);
+        grid-template-columns:repeat(3, 1fr);
     }
     .circle-img .graph-box  {
         display:none;
@@ -2361,14 +2395,20 @@ textarea::-webkit-scrollbar-thumb {
     .circle-graph {
         flex-direction: column;
         gap:24px;
+        padding: 0px;
     }
     .m-graph {
         display:flex;
+        width: 100%;
     }
     .circle-img {
         width: 100%;
     }
-    
+}
+@media(max-width:600px) {
+    .service-gallery {
+        grid-template-columns:repeat(2, 1fr);
+    }
 }
 
 

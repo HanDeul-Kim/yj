@@ -135,4 +135,44 @@ if (document.querySelector('.layout-md.card')) {
 
 
 
+// 파일 업로드
+const fileTarget = document.querySelector('#file');
+const filetextSub = document.querySelector('.file-text-sub');
+let fileSizeMB , fileSizeKB, fileSizeBytes, totalSizeMB;
 
+fileTarget.addEventListener('change', function(event) {
+    const files = event.target.files;
+    const fileArr = [];
+    let totalSizeAdd = 0;
+    for (let i = 0; i < files.length; i++) {
+        fileArr.push(files[i].name);
+
+        // MB (단일)
+        fileSizeMB = (files[i].size / (1024 * 1024)).toFixed(2); // 파일크기를 MB로 변환 함.
+        // KB (단일)
+        fileSizeKB = (files[i].size / 1024).toFixed(2);
+        // BYTE (단일)
+        fileSizeBytes = files[i].size;
+
+        // MB (총 크기)
+        totalSizeAdd += fileSizeBytes;
+        totalSizeMB = (totalSizeAdd / (1024 * 1024)).toFixed(2);
+    }
+
+    const fileList = fileArr.join('<br>');
+    const fileText = document.querySelector('.file-name');
+    
+    
+ 
+    if( files.length > 50) {
+        alert('최대 10개만 업로드 가능')
+        this.value = '';
+        fileText.innerHTML = '파일첨부 : 용량 15MB 이하만 업로드 가능'; 
+    } else {
+        fileText.innerHTML = fileList;
+        filetextSub.innerHTML = `현재 ${totalSizeMB}MB / 최대 15MB (본문 포함)`
+    }
+    
+ 
+
+});

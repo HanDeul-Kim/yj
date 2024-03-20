@@ -8,133 +8,136 @@
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
     <!-- <script src="/assets/lib/recaptcha.js" async defer></script> -->
     <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
-    <link rel="/assets/lib/aos.css"></link>
+    <link rel="/assets/lib/aos.css">
+    </link>
     <link rel="stylesheet" href="/assets/css/main.css">
     <script src="/assets/lib/recaptcha.js" async defer></script>
 </head>
 
 <body>
     <%- include('header.ejs') %>
-    <main>
-        <div class="banner detail contact">
-            <div class="tit-wrap" data-aos="fade">
-                <h1 class="tit">Contact</h1>
-                <p class="sub-tit">
-                    온라인 문의
-                </p>
-            </div>
-        </div>
-        <div class="layout-md">
-            <div class="page-tit type3">
-                <h2>온라인문의</h2>
-                <p>YJ Innovation의 전문컨설턴트에게 문의하세요.</p>
-            </div>
-        </div>
-
-        <div class="layout-md">
-            <div class="form-area">
-                <div class="form-header">
-                    <span>
-                        <div class="emphasis">
-                            <span></span>
-                        </div>
-                        표시는 필수입력
-                    </span>
+        <main>
+            <div class="banner detail contact">
+                <div class="tit-wrap" data-aos="fade">
+                    <h1 class="tit">Contact</h1>
+                    <p class="sub-tit">
+                        온라인 문의
+                    </p>
                 </div>
-                <!-- action="/api/post/edit" method="POST" -->
-                <div class="form-main">
-                    <div class="col-group">
-                        <div class="input-group w50">
-                            <label for="name">
-                                고객명
-                                <div class="emphasis">
-                                    <span></span>
-                                </div>
-                            </label>
-                            <input type="text" placeholder="홍길동" id="name">
-                        </div>
-                        <div class="input-group w50">
-                            <label for="email">
-                                이메일
-                                <div class="emphasis">
-                                    <span></span>
-                                </div>
-                            </label>
-                            <div class="input-box">
-                                <input type="text" id="email1" name="email1">
-                                <span>@</span>
-                                <input type="text" id="email2" name="email2" readonly>
-                                <select name="" id="" onChange="selectEmail(this)">
-                                    <option value="">선택하세요</option>
-                                    <option value="naver.com">naver.com</option>
-                                    <option value="daum.net">daum.net</option>
-                                    <option value="1">직접입력</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-group">
-                        <div class="input-group w50">
-                            <label for="tel">연락처</label>
-                            <div class="input-box">
-                                <select name="" id="tel1">
-                                    <option id="tel" selected>02</option>
-                                    <option>031</option>
-                                </select>
-                                <input type="text" id="tel2">
-                                <span>-</span>
-                                <input type="text" id="tel3">
-                            </div>
-                        </div>
-                        <div class="input-group w50">
-                            <label for="title">제목
-                                <div class="emphasis">
-                                    <span></span>
-                                </div>
-                            </label>
-                            <input type="text" id="title">
-                        </div>
-                    </div>
-                    <div class="col-group">
-                        <div class="input-group w100">
-                            <label for="">
-                                문의내용
-                                <div class="emphasis">
-                                    <span></span>
-                                </div>
-                            </label>
-                            <textarea name="" id="textarea" cols="30" rows="10"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-group">
-                        <div class="input-group w50">
-                            <div class="input-file">
-                                <div class="file-tit">
-                                    <label>파일첨부</label>
-                                    <span>용량 5 MB 이하만 업로드 가능</span>
-                                </div>
-                                <div class="file-content">
-                                    <input type="text" readonly>
-                                    <label for="" class="input-btn-black">
-                                        파일첨부
-                                    </label>
-                                </div>
+            </div>
+            <div class="layout-md">
+                <div class="page-tit type3">
+                    <h2>온라인문의</h2>
+                    <p>YJ Innovation의 전문컨설턴트에게 문의하세요.</p>
+                </div>
+            </div>
 
+            <div class="layout-md">
+                <div class="form-area">
+                    <div class="form-header">
+                        <span>
+                            <div class="emphasis">
+                                <span></span>
+                            </div>
+                            표시는 필수입력
+                        </span>
+                    </div>
+                    <!-- action="/api/post/edit" method="POST" -->
+                    <div class="form-main">
+                        <div class="col-group">
+                            <div class="input-group w50">
+                                <label for="name">
+                                    고객명
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <input type="text" placeholder="홍길동" id="name">
+                            </div>
+                            <div class="input-group w50">
+                                <label for="email">
+                                    이메일
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <div class="input-box">
+                                    <input type="text" id="email1" name="email1">
+                                    <span>@</span>
+                                    <input type="text" id="email2" name="email2" readonly>
+                                    <select name="" id="" onChange="selectEmail(this)">
+                                        <option value="">선택하세요</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="daum.net">daum.net</option>
+                                        <option value="1">직접입력</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="input-group w50">
-                            <div class="input-spam">
-                                <div class="file-tit">
-                                    <label for="">
-                                        스팸방지코드
-                                        <div class="emphasis">
-                                            <span></span>
-                                        </div>
-                                    </label>
-                                    <span>자동등록방지 숫자를 순서대로 입력하세요</span>
+                        <div class="col-group">
+                            <div class="input-group w50">
+                                <label for="tel">연락처</label>
+                                <div class="input-box">
+                                    <select name="" id="tel1">
+                                        <option id="tel" selected>02</option>
+                                        <option>031</option>
+                                    </select>
+                                    <input type="text" id="tel2">
+                                    <span>-</span>
+                                    <input type="text" id="tel3">
                                 </div>
-                                <div class="file-content">
-                                    <!-- <div class="spam-img">
+                            </div>
+                            <div class="input-group w50">
+                                <label for="title">제목
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <input type="text" id="title">
+                            </div>
+                        </div>
+                        <div class="col-group">
+                            <div class="input-group w100">
+                                <label for="">
+                                    문의내용
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-group">
+                            <div class="input-group w50">
+                                <div class="input-file">
+                                    <div class="file-tit">
+                                        <label>파일첨부</label>
+                                        <span>용량 15 MB 이하만 업로드 가능</span>
+                                    </div>
+                                    <div class="file-content">
+                                        <!-- <input id="fileText" type="text" readonly placeholder="파일첨부 1 : 용량 5MB 이하만 업로드 가능"> -->
+                                        <span class="file-name">파일첨부 : 용량 15MB 이하만 업로드 가능</span>
+                                        <label class="input-btn-black" for="file">
+                                            파일첨부
+                                        </label>
+                                        <input type="file" multiple  id="file">
+                                    </div>
+                                    <div class="file-text-sub" style="background-color:#000; color:#fff;">현재 0.00MB / 최대 15MB (본문 포함)</div>
+                                </div>
+                            </div>
+                            <div class="input-group w50">
+                                <div class="input-spam">
+                                    <div class="file-tit">
+                                        <label for="">
+                                            스팸방지코드
+                                            <div class="emphasis">
+                                                <span></span>
+                                            </div>
+                                        </label>
+                                        <span>자동등록방지 숫자를 순서대로 입력하세요</span>
+                                    </div>
+                                    <div class="file-content">
+                                        <!-- <div class="spam-img">
                                         <img src="/assets/img/spam.png" alt="">
                                     </div>
                                     <input type="text">
@@ -144,125 +147,130 @@
                                     <label for="" class="input-btn-white" id="captcha_reload">
                                         새로고침
                                     </label> -->
-                                    <div class="g-recaptcha" data-sitekey="6LezpY8pAAAAAIWdDkpwwQ0Pa1HcGWsTot1UUyXn">
+                                        <div class="g-recaptcha"
+                                            data-sitekey="6LezpY8pAAAAAIWdDkpwwQ0Pa1HcGWsTot1UUyXn">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-group">
-                        <div class="input-group w100">
-                            <div class="agree-box">
-                                <label for="">
-                                    개인정보수집 및 이용안내
-                                </label>
-                                <div class="input-privacy">
-                                    <p>와이제이이노베이션(이하 "회사"라 합니다)는 다음과 같은 이유로 필요한 최소한의 개인정보를 수집·이용합니다.
-                                        - 온라인문의
+                        <div class="col-group">
+                            <div class="input-group w100">
+                                <div class="agree-box">
+                                    <label for="">
+                                        개인정보수집 및 이용안내
+                                    </label>
+                                    <div class="input-privacy">
+                                        <p>와이제이이노베이션(이하 "회사"라 합니다)는 다음과 같은 이유로 필요한 최소한의 개인정보를 수집·이용합니다.
+                                            - 온라인문의
 
-                                        [수집하는 개인정보의 항목]
-                                        회사는 회원가입 당시 아래와 같은 개인정보를 수집하고 있습니다.
-                                        - 필수항목 : 고객명,이메일
-                                        - 선택항목 : 연락처
+                                            [수집하는 개인정보의 항목]
+                                            회사는 회원가입 당시 아래와 같은 개인정보를 수집하고 있습니다.
+                                            - 필수항목 : 고객명,이메일
+                                            - 선택항목 : 연락처
 
-                                        [개인정보 보유 및 이용기간]
-                                        귀하의 개인정보는 회사의 지속적인 창업상담 및 창업관련 정보의 제공을 위해 다음의 명시한 기간 동안 보존합니다. 단 귀하가 별도로
-                                        개인정보의
-                                        정정, 처리정지
-                                        또는 삭제를 요구할 경우, 회사는 내부절차에 따라 귀하의 요구를 즉시 수용할 것입니다.
-                                        - 작성일로부터 3년
+                                            [개인정보 보유 및 이용기간]
+                                            귀하의 개인정보는 회사의 지속적인 창업상담 및 창업관련 정보의 제공을 위해 다음의 명시한 기간 동안 보존합니다. 단 귀하가 별도로
+                                            개인정보의
+                                            정정, 처리정지
+                                            또는 삭제를 요구할 경우, 회사는 내부절차에 따라 귀하의 요구를 즉시 수용할 것입니다.
+                                            - 작성일로부터 3년
 
-                                        [개인정보 수집 동의 거부의 권리]
-                                        귀하께서는 본 개인정보 수집 동의를 거부하실 권리가 있습니다. 다만 필수항목에 해당하는 개인정보의 수집 동의를 거부하실 경우 온라인문의
-                                        이용이
-                                        불가합니다.
+                                            [개인정보 수집 동의 거부의 권리]
+                                            귀하께서는 본 개인정보 수집 동의를 거부하실 권리가 있습니다. 다만 필수항목에 해당하는 개인정보의 수집 동의를 거부하실 경우 온라인문의
+                                            이용이
+                                            불가합니다.
+                                        </p>
+                                    </div>
+                                    <p class="input-check">
+                                        <input type="checkbox" name="" id="agree">
+                                        <label for="agree">개인정보처리방침에 동의</label>
                                     </p>
                                 </div>
-                                <p class="input-check">
-                                    <input type="checkbox" name="" id="agree">
-                                    <label for="agree">개인정보처리방침에 동의</label>
-                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="input-submit">
-                        <button type="submit" id="submit">문의하기</button>
+                        <div class="input-submit">
+                            <button type="submit" id="submit">문의하기</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <%- include('footer.ejs') %>
-    <!-- axios cdn -->
-    <!-- <script src="/assets/lib/jquery.min.js"></script>
+        </main>
+        <%- include('footer.ejs') %>
+            <!-- axios cdn -->
+            <!-- <script src="/assets/lib/jquery.min.js"></script>
     <script src="/assets/lib/axios.min.js"></script>
     <script src="/assets/lib/gsap.min.js"></script>
      -->
 
-    <!-- http://localhost:3000/assets/lib/axios.min.js -->
-    <!-- <script src="/assets/lib/axios.min.js"></script> -->
-    <script src="/assets/lib/jquery.min.js"></script>
-    <script src="/assets/lib/axios.min.js"></script>
-    <script src="/assets/lib/gsap.min.js"></script>
-    <script src="/assets/lib/aos.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script>
-        function selectEmail(ele) {
-            const email2 = document.querySelector('#email2');
+            <!-- http://localhost:3000/assets/lib/axios.min.js -->
+            <!-- <script src="/assets/lib/axios.min.js"></script> -->
+            <script src="/assets/lib/jquery.min.js"></script>
+            <script src="/assets/lib/axios.min.js"></script>
+            <script src="/assets/lib/gsap.min.js"></script>
+            <script src="/assets/lib/aos.js"></script>
+            <script src="/assets/js/main.js"></script>
+            <script>
+                function selectEmail(ele) {
+                    const email2 = document.querySelector('#email2');
 
-            // '1'인 경우 직접입력
-            if (ele.value === "1") {
-                email2.removeAttribute('readonly');
-                email2.value = '';
-            } else {
-                email2.setAttribute('readonly', true);
-                email2.value = ele.value;
-            }
-        }
+                    // '1'인 경우 직접입력
+                    if (ele.value === "1") {
+                        email2.removeAttribute('readonly');
+                        email2.value = '';
+                    } else {
+                        email2.setAttribute('readonly', true);
+                        email2.value = ele.value;
+                    }
+                }
 
-        document.getElementById('submit').addEventListener('click', function () {
-            const name = document.getElementById('name').value;
-            const mail1 = document.getElementById('email1').value;
-            const mail2 = document.getElementById('email2').value;
-            const email = `${mail1}@${mail2}`
-            const tel1 = document.getElementById('tel1').value;
-            const tel2 = document.getElementById('tel2').value;
-            const tel3 = document.getElementById('tel3').value;
-            const tel = `${tel1}-${tel2}-${tel3}`
-            const title = document.getElementById('title').value;
-            const content = document.getElementById('textarea').value;
 
-            const agreeCheck = document.getElementById('agree');
-            // recaptcha
-            const response = grecaptcha.getResponse();
+                // document.querySelector('#file').addEventListener('change', (event) => {
+                //     const fileInput = document.getElementById('file');
+                //     const files = fileInput.files;
+                //     if(files.length > 2) {
+                //         alert('최대 2개만 업로드 가능')
+                //         event.preventDefault();
+                //     }
+                // })
+                document.getElementById('submit').addEventListener('click', function () {
+                    const fileInput = document.getElementById('file');
+                    const files = fileInput.files; // 파일들 선택
 
-            if (name === '') {
-                alert('고객명은 필수 기재 사항입니다.')
-            } else if (mail1 === '' || mail2 === '') {
-                alert('이메일은 필수 기재 사항입니다.')
-            } else if (title === '') {
-                alert('제목은 필수 기재 사항입니다.')
-            } else if (content === '') {
-                alert('문의내용은 필수 기재 사항입니다.')
-            } else if (!agreeCheck.checked) {
-                alert('개인정보처리방침에 동의 해주세요.')
-            } else {
-                axios.post('/submit', { name, email, tel, title, content })
-                        .then(function (response) {
-                            console.log('성공', response.data);
-                            // 서버 응답에 대한 추가 처리
-                            alert('완료하였습니다.')
+                    const agreeCheck = document.getElementById('agree');
+                    // recaptcha
+                    const response = grecaptcha.getResponse();
+
+                    if (!files.length) {
+                        alert('파일을 선택해주세요.');
+                    } else if (!agreeCheck.checked) {
+                        alert('개인정보처리방침에 동의 해주세요.');
+                    } else {
+                        const formData = new FormData();
+                        for(let i = 0; i < files.length; i++) {
+                            formData.append('file', files[i])
+                        }
+                        formData.append('file', file); // 파일 추가
+
+                        axios.post('/submit', formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
                         })
-                        
-                        .then()
-                        .catch(function (error) {
-                            console.error('Error:', error);
-                            // 오류 처리
-                        });
-            }
-        });
+                            .then(function (response) {
+                                console.log('성공', response.data);
+                                alert('완료하였습니다.')
+                            })
+                            .catch(function (error) {
+                                console.error('Error:', error);
+                                alert('오류가 발생했습니다. 다시 시도해주세요.');
+                            });
+                    }
+                });
 
-    </script>
+
+            </script>
 
 </body>
+
 </html>
