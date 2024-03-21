@@ -38,52 +38,55 @@ app.get('/:id', (req, res) => {
 app.post('/submit', upload.array('file'), async (req, res) => {
     console.log('데이터:', req.body);
 
-    console.log(req.body);
-    // console.log(req.files);
 
-    // if (!req.files || req.files.length === 0) {
-    //     return res.status(400).end('파일이 전송되지 않음')
-    // }
+    if (!req.files || req.files.length === 0) {
+        return res.status(400).end('파일이 전송되지 않음')
+    }
 
-    // const files = req.files;
-    // try {
-    //     await sendEmail(files);
-    //     // res.send('이메일이 전송되었습니다.')
-    //     // res.end()
-    //     res.status(200).json({success: '전송에 성공했습니다.'})
-    // } catch (error) {
-    //     // res.status(500).end();
-    //     if(error.responseCode === 552) {
-    //         res.status(500).json({errorType: '보낼 수 있는 용량이 초과되었습니다.'})
-    //     } else {
-    //         res.status(500).json({errorType: '전송에 실패했습니다.'})
-    //     }
-    // }
+    const name = req.name;
+    const email = req.email;
+    const tel = req.tel;
+    const title = req.title;
+    const content = req.content;
+    const files = req.files;
+    try {
+        await sendEmail(name, email, tel, title, content, files);
+        // res.send('이메일이 전송되었습니다.')
+        // res.end()
+        res.status(200).json({ success: '전송에 성공했습니다.' })
+    } catch (error) {
+        // res.status(500).end();
+        if (error.responseCode === 552) {
+            res.status(500).json({ errorType: '보낼 수 있는 용량이 초과되었습니다.' })
+        } else {
+            res.status(500).json({ errorType: '전송에 실패했습니다.' })
+        }
+    }
 })
 
-async function sendEmail(files) {
+async function sendEmail(name, email, tel, title, content, files) {
     const transporter = nodemailer.createTransport({
         service: 'naver',
         host: 'smtp.naver.com',
         port: 587,
         auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD },
     })
-    
+
     const mailOptions = {
         from: 'tjdtnyj@naver.com',
         to: 'tjdtnyj@naver.com',
-        subject: `첨부파일`,
-        // html: `
-        //     <div class="container">
-        //     <p style="background:red; color:blue;">이메일 내용</p>
-        //     <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}/p><p>${content}</p>
-        //     </div>
-        // `
+        subject: `${title}`,
         html: `
-            <div>
-                test
+            <div class="container">
+            <p style="background:red; color:blue;">이메일 내용</p>
+            <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}/p><p>${content}</p>
             </div>
         `,
+        // html: `
+        //     <div>
+        //         test
+        //     </div>
+        // `,
         attachments: files.map(file => ({
             filename: file.originalname,
             path: file.path
