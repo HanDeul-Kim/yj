@@ -39,16 +39,19 @@ app.post('/submit', upload.array('file'), async (req, res) => {
     console.log('데이터:', req.body);
 
 
-    if (!req.files || req.files.length === 0) {
-        return res.status(400).end('파일이 전송되지 않음')
-    }
+    // if (!req.files || req.files.length === 0) {
+    //     return res.status(400).end('파일이 전송되지 않음')
+    // }
 
-    const name = req.name;
-    const email = req.email;
-    const tel = req.tel;
-    const title = req.title;
-    const content = req.content;
+    const name = req.body.name;
+    const email = req.body.email;
+    const tel = req.body.tel;
+    const title = req.body.title;
+    const content = req.body.content;
     const files = req.files;
+    if (!files) {
+        res.status(500).json({ errorType: '파일첨부가 안됨'})
+    }
     try {
         await sendEmail(name, email, tel, title, content, files);
         // res.send('이메일이 전송되었습니다.')
@@ -79,7 +82,7 @@ async function sendEmail(name, email, tel, title, content, files) {
         html: `
             <div class="container">
             <p style="background:red; color:blue;">이메일 내용</p>
-            <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}/p><p>${content}</p>
+            <p>${name}</p><p>${email}</p><p>${tel}</p><p>${title}</p><p>${content}</p>
             </div>
         `,
         // html: `

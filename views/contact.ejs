@@ -268,58 +268,61 @@
                         formData.append('tel', tel);
                         formData.append('title', title);
                         formData.append('content', content);
-                        
+
 
                         for (let i = 0; i < files.length; i++) {
                             formData.append('file', files[i])
                         }
                         // formData.append('file', file); // 파일 추가
 
-                        axios.post('/submit', formData, {
-                            headers: {
-                                'Content-Type': 'multipart/form-data'
-                            }
-                        })
-                            .then(function (response) {
-                                // alert('전송 성공하였습니다.')
-                                sweetAlert('Sucess!!', response.data.success, 'success', '확인')
+                        if (files.length !== 0) {
+                            axios.post('/submit', formData, {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data'
+                                }
                             })
-
-                            .catch(function (error) {
-                                Swal.fire({
-                                    title: 'Error!!',
-                                    text: `${error.response.data.errorType}`,
-                                    confirmButtonText: '확인',
-                                    imageUrl: '/assets/img/logo.png',
-                                    imageWidth: 'auto',
-                                    imageHeight: 'auto',
-                                    imageAlt: '에러 이미지',
+                                .then(function (response) {
+                                    // alert('전송 성공하였습니다.')
+                                    sweetAlert('Sucess!!', response.data.success, 'success', '확인')
                                 })
-                                // Swal.fire({
-                                //     title: 'Error!!',
-                                //     text: `정말로 보내시겠습니까?`,
-                                //     imageUrl: '/assets/img/logo.png',
-                                //     imageWidth: 'auto',
-                                //     imageHeight: 'auto',
-                                //     imageAlt: '에러 이미지',
-                                //     showCancelButton: true,
-                                //     confirmButtonText: '확인',
-                                //     cancelButtonText: '취소',
-                                //     confirmButtonColor: "#0a0a0a",
-                                //     cancelButtonColor: "red"
-                                // })
-                                // .then((result) => {
-                                //     if(result.isConfirmed) {
-                                //         Swal.fire({
-                                //             text:'confirm',
-                                //         })
-                                //     } else if (result.inDismissed) {
-                                //         swal.fire({
-                                //             text:'cancel'
-                                //         })
-                                //     }
-                                // })
-                            });
+
+                                .catch(function (error) {
+                                    Swal.fire({
+                                        title: 'Error!!',
+                                        text: `${error.response.data.errorType}`,
+                                        confirmButtonText: '확인',
+                                        imageUrl: '/assets/img/logo.png',
+                                        imageWidth: 'auto',
+                                        imageHeight: 'auto',
+                                        imageAlt: '에러 이미지',
+                                    })
+                                    // Swal.fire({
+                                    //     title: 'Error!!',
+                                    //     text: `정말로 보내시겠습니까?`,
+                                    //     imageUrl: '/assets/img/logo.png',
+                                    //     imageWidth: 'auto',
+                                    //     imageHeight: 'auto',
+                                    //     imageAlt: '에러 이미지',
+                                    //     showCancelButton: true,
+                                    //     confirmButtonText: '확인',
+                                    //     cancelButtonText: '취소',
+                                    //     confirmButtonColor: "#0a0a0a",
+                                    //     cancelButtonColor: "red"
+                                    // })
+                                    // .then((result) => {
+                                    //     if(result.isConfirmed) {
+                                    //         Swal.fire({
+                                    //             text:'confirm',
+                                    //         })
+                                    //     } else if (result.inDismissed) {
+                                    //         swal.fire({
+                                    //             text:'cancel'
+                                    //         })
+                                    //     }
+                                    // })
+                                });
+                        }
+
                     }
 
                 });
