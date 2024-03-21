@@ -18,7 +18,7 @@ const cors = require('cors');
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const upload = multer({dest:'uploads/'});
+const upload = multer({ dest: 'uploads/' });
 
 
 app.get('/', (req, res) => {
@@ -35,28 +35,30 @@ app.get('/:id', (req, res) => {
 //     await sendEmail(req.body.name, req.body.email, req.body.tel, req.body.title, req.body.content, req.body.uploadFile)
 //     res.send('이메일이 전송되었습니다.');
 // });
-app.post('/submit', upload.array('file'), async(req, res) => {
+app.post('/submit', upload.array('file'), async (req, res) => {
     console.log('데이터:', req.body);
-    
-    
-    // if(!req.file) {
+
+    console.log(req.body);
+    // console.log(req.files);
+
+    // if (!req.files || req.files.length === 0) {
     //     return res.status(400).end('파일이 전송되지 않음')
     // }
-    
-    // const file = req.file;
-    
-    if(!req.files || req.files.length === 0) {
-        return res.status(400).end('파일이 전송되지 않음')
-    }
 
-    const files = req.files;
-
-    await sendEmail(files);
-    res.send('이메일이 전송되었습니다.')
-
-
-
-
+    // const files = req.files;
+    // try {
+    //     await sendEmail(files);
+    //     // res.send('이메일이 전송되었습니다.')
+    //     // res.end()
+    //     res.status(200).json({success: '전송에 성공했습니다.'})
+    // } catch (error) {
+    //     // res.status(500).end();
+    //     if(error.responseCode === 552) {
+    //         res.status(500).json({errorType: '보낼 수 있는 용량이 초과되었습니다.'})
+    //     } else {
+    //         res.status(500).json({errorType: '전송에 실패했습니다.'})
+    //     }
+    // }
 })
 
 async function sendEmail(files) {
@@ -66,12 +68,7 @@ async function sendEmail(files) {
         port: 587,
         auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD },
     })
-
-
-
-
-
-
+    
     const mailOptions = {
         from: 'tjdtnyj@naver.com',
         to: 'tjdtnyj@naver.com',
@@ -87,24 +84,16 @@ async function sendEmail(files) {
                 test
             </div>
         `,
-        // attachments: [
-        //     {
-        //         filename: file.originalname,
-        //         path: file.path
-        //     }
-        // ]
         attachments: files.map(file => ({
             filename: file.originalname,
             path: file.path
         }))
-        
     }
-
     try {
         await transporter.sendMail(mailOptions);
         console.log('이메일 전송 성공')
     } catch (error) {
-        console.log('이메일 전송 실패:', error)
+        throw error;
     }
 }
 app.listen(port, () => {

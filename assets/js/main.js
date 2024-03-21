@@ -165,14 +165,12 @@ fileTarget.addEventListener('change', function(event) {
     
  
     if( files.length > 50) {
-        alert('최대 10개만 업로드 가능')
+        alert('최대 50개만 업로드 가능')
         this.value = '';
         fileText.innerHTML = '파일첨부 : 용량 15MB 이하만 업로드 가능'; 
     } else {
         fileText.innerHTML = fileList;
         filetextSub.innerHTML = `현재 ${totalSizeMB}MB / 최대 15MB (본문 포함)`
     }
-    
- 
 
 });

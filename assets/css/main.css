@@ -2361,6 +2361,17 @@ textarea::-webkit-scrollbar-thumb {
     margin-top: 40px;
     margin-bottom: 40px;
 }
+.swal2-html-container {
+    text-align: center;
+    color:#fff;
+}
+.swal2-image {
+    margin-bottom: 40px;
+}
+.swal2-confirm .swal2-styled {
+    outline: none !important;
+    border: none !important;
+}
 @media(max-width:1386px) {
     .service-gallery {
         grid-template-columns:repeat(4, 1fr);
