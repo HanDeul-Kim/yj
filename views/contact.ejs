@@ -62,14 +62,16 @@
                                         <span></span>
                                     </div>
                                 </label>
+
                                 <div class="input-box">
-                                    <input type="text" id="email1" name="email1">
+                                    <input type="email" id="email1" name="email1" required >
                                     <span>@</span>
-                                    <input type="text" id="email2" name="email2" readonly>
-                                    <select name="" id="" onChange="selectEmail(this)">
+                                    <input type="email" id="email2" name="email2" required readonly tabindex="-1">
+                                    <select name="" onChange="selectEmail(this)">
                                         <option value="">선택하세요</option>
                                         <option value="naver.com">naver.com</option>
                                         <option value="daum.net">daum.net</option>
+                                        <option value="google.com">goole.com</option>
                                         <option value="1">직접입력</option>
                                     </select>
                                 </div>
@@ -77,12 +79,17 @@
                         </div>
                         <div class="col-group">
                             <div class="input-group w50">
-                                <label for="tel">연락처</label>
+                                <label>연락처</label>
                                 <div class="input-box">
-                                    <select name="" id="tel1">
-                                        <option id="tel" selected>02</option>
-                                        <option>031</option>
+                                    <select name="" onChange="selectTel(this)">
+                                        <option value="02">02</option>
+                                        <option value="031">031</option>
+                                        <option value="051">051</option>
+                                        <option value="010">010</option>
+                                        <option value="1">직접입력</option>
                                     </select>
+                                    <input type="text" id="tel1" tabindex="-1" readonly value="02">
+                                    <span>-</span>
                                     <input type="text" id="tel2">
                                     <span>-</span>
                                     <input type="text" id="tel3">
@@ -206,18 +213,74 @@
             <script src="/assets/lib/aos.js"></script>
             <script src="/assets/js/main.js"></script>
             <script>
+                
+
+                email1.addEventListener('input', () => {
+                    let inputValue = email1.value;
+                    let englishAndNumbersOnly = inputValue.replace(/[^a-zA-Z0-9]/g, "");
+                    email1.value = englishAndNumbersOnly;
+
+                    if (inputValue !== englishAndNumbersOnly) {
+                        Swal.fire({
+                            title: '영문만 입력 가능합니다.',
+                            icon: 'info',
+                            comfirmButtonText: '확인'
+                        })
+                    }
+                })
+                // onlyNumber
+                function onlyNumber(target) {
+                    target.addEventListener('input', () => {
+                        let inputValue = target.value;
+                        let numbersOnly = inputValue.replace(/\D/g, "");
+                        target.value = numbersOnly;
+
+                        if (inputValue !== numbersOnly) {
+                            Swal.fire({
+                                title: '숫자만 입력 가능합니다.',
+                                icon: 'info',
+                                confirmButtonText: '확인'
+                            })
+                        }
+                    })
+                }
+                const onlyNumInputs = [tel2, tel3];
+                onlyNumInputs.forEach((e) => {
+                    onlyNumber(e);
+                })
+
+                // tel
+                function selectTel(ele) {
+                    const tel1 = document.querySelector('#tel1');
+                    if (ele.value === "1") {
+                        tel1.removeAttribute('tabindex')
+                        tel1.removeAttribute('readonly');
+                        tel1.value = '';
+                    } else {
+                        tel1.setAttribute('tabindex', '-1')
+                        tel1.setAttribute('readonly', true);
+                        tel1.value = ele.value;
+                    }
+                }
+                // email
                 function selectEmail(ele) {
                     const email2 = document.querySelector('#email2');
 
                     // '1'인 경우 직접입력
                     if (ele.value === "1") {
+                        email2.removeAttribute('tabindex');
                         email2.removeAttribute('readonly');
                         email2.value = '';
                     } else {
+                        email2.setAttribute('tabindex', '-1');
                         email2.setAttribute('readonly', true);
                         email2.value = ele.value;
                     }
                 }
+
+              
+                
+
 
                 // sweetAlert
                 function sweetAlert(title, text, icon, buttonText) {
@@ -242,7 +305,6 @@
                     const title = document.getElementById('title').value;
                     const content = document.getElementById('textarea').value;
 
-
                     // 업로드 file
                     const fileInput = document.getElementById('file');
                     const files = fileInput.files; // 파일들 선택
@@ -252,13 +314,13 @@
                     const response = grecaptcha.getResponse();
 
                     if (name === '') {
-                        sweetAlert('name check', '', '', '')
+                        sweetAlert('고객명을 입력해주세요.', '', 'info', '확인')
                     } else if (mail1 === '' || mail2 === '') {
-                        sweetAlert('mail check', '', '', '')
+                        sweetAlert('메일을 입력해주세요.', '', 'info', '확인')
                     } else if (title === '') {
-                        sweetAlert('title check', '', '', '')
+                        sweetAlert('제목을 입력해주세요.', '', 'info', '확인')
                     } else if (content === '') {
-                        sweetAlert('content check', '', '', '')
+                        sweetAlert('내용을 입력해주세요.', '', 'info', '확인')
                     } else if (!agreeCheck.checked) {
                         sweetAlert('개인정보처리방침에 동의 해주세요.', '', 'info', '확인')
                     } else {
@@ -270,58 +332,70 @@
                         formData.append('content', content);
 
 
-                        for (let i = 0; i < files.length; i++) {
-                            formData.append('file', files[i])
-                        }
-                        // formData.append('file', file); // 파일 추가
+                        // for (let i = 0; i < files.length; i++) {
+                        //     formData.append('file', files[i])
+                        // }
 
-                        if (files.length !== 0) {
-                            axios.post('/submit', formData, {
-                                headers: {
-                                    'Content-Type': 'multipart/form-data'
-                                }
-                            })
-                                .then(function (response) {
-                                    // alert('전송 성공하였습니다.')
-                                    sweetAlert('Sucess!!', response.data.success, 'success', '확인')
+                        // 파일이 선택되었을 때만 FormData에 파일 추가
+                        if (files.length > 0) {
+                            for (let i = 0; i < files.length; i++) {
+                                formData.append('file', files[i]);
+                            }
+                        }
+
+
+                        axios.post('/submit', formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        })
+                            .then(function (response) {
+                                Swal.fire({
+                                    title: 'Success!!',
+                                    text: `${response.data.success}`,
+                                    icon: 'success',
+                                    confirmButtonText: '확인',
                                 })
+                                .then( (result) => {
+                                    location.reload();
+                                })
+                            })
 
-                                .catch(function (error) {
-                                    Swal.fire({
-                                        title: 'Error!!',
-                                        text: `${error.response.data.errorType}`,
-                                        confirmButtonText: '확인',
-                                        imageUrl: '/assets/img/logo.png',
-                                        imageWidth: 'auto',
-                                        imageHeight: 'auto',
-                                        imageAlt: '에러 이미지',
-                                    })
-                                    // Swal.fire({
-                                    //     title: 'Error!!',
-                                    //     text: `정말로 보내시겠습니까?`,
-                                    //     imageUrl: '/assets/img/logo.png',
-                                    //     imageWidth: 'auto',
-                                    //     imageHeight: 'auto',
-                                    //     imageAlt: '에러 이미지',
-                                    //     showCancelButton: true,
-                                    //     confirmButtonText: '확인',
-                                    //     cancelButtonText: '취소',
-                                    //     confirmButtonColor: "#0a0a0a",
-                                    //     cancelButtonColor: "red"
-                                    // })
-                                    // .then((result) => {
-                                    //     if(result.isConfirmed) {
-                                    //         Swal.fire({
-                                    //             text:'confirm',
-                                    //         })
-                                    //     } else if (result.inDismissed) {
-                                    //         swal.fire({
-                                    //             text:'cancel'
-                                    //         })
-                                    //     }
-                                    // })
-                                });
-                        }
+                            .catch(function (error) {
+                                Swal.fire({
+                                    title: 'Error!!',
+                                    text: `${error.response.data.errorType}`,
+                                    confirmButtonText: '확인',
+                                    imageUrl: '/assets/img/logo.png',
+                                    imageWidth: 'auto',
+                                    imageHeight: 'auto',
+                                    imageAlt: '에러 이미지',
+                                })
+                                // Swal.fire({
+                                //     title: 'Error!!',
+                                //     text: `정말로 보내시겠습니까?`,
+                                //     imageUrl: '/assets/img/logo.png',
+                                //     imageWidth: 'auto',
+                                //     imageHeight: 'auto',
+                                //     imageAlt: '에러 이미지',
+                                //     showCancelButton: true,
+                                //     confirmButtonText: '확인',
+                                //     cancelButtonText: '취소',
+                                //     confirmButtonColor: "#0a0a0a",
+                                //     cancelButtonColor: "red"
+                                // })
+                                // .then((result) => {
+                                //     if(result.isConfirmed) {
+                                //         Swal.fire({
+                                //             text:'confirm',
+                                //         })
+                                //     } else if (result.inDismissed) {
+                                //         swal.fire({
+                                //             text:'cancel'
+                                //         })
+                                //     }
+                                // })
+                            });
 
                     }
 

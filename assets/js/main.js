@@ -164,8 +164,13 @@ fileTarget.addEventListener('change', function(event) {
     
     
  
-    if( files.length > 50) {
-        alert('최대 50개만 업로드 가능')
+    if( files.length > 10) {
+        Swal.fire({
+            title: 'Error!!',
+            text: `최대 10개까지 첨부 가능합니다.`,
+            icon: 'error',
+            confirmButtonText: '확인',
+        })
         this.value = '';
         fileText.innerHTML = '파일첨부 : 용량 15MB 이하만 업로드 가능'; 
     } else {
