@@ -164,10 +164,10 @@ fileTarget.addEventListener('change', function(event) {
     
     
  
-    if( files.length > 10) {
+    if( files.length > 50) {
         Swal.fire({
             title: 'Error!!',
-            text: `최대 10개까지 첨부 가능합니다.`,
+            text: `최대 50개까지 첨부 가능합니다.`,
             icon: 'error',
             confirmButtonText: '확인',
         })

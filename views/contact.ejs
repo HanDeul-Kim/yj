@@ -64,7 +64,7 @@
                                 </label>
 
                                 <div class="input-box">
-                                    <input type="email" id="email1" name="email1" required >
+                                    <input type="email" id="email1" name="email1" required>
                                     <span>@</span>
                                     <input type="email" id="email2" name="email2" required readonly tabindex="-1">
                                     <select name="" onChange="selectEmail(this)">
@@ -205,6 +205,10 @@
                 </div>
             </div>
         </main>
+        <div class="spinner">
+            <div class="spinner-main"></div>
+            <p>처리중<span>...</span></p>
+        </div>
         <%- include('footer.ejs') %>
             <script src="/assets/lib/jquery.min.js"></script>
             <script src="/assets/lib/sweetalert2.js"></script>
@@ -213,7 +217,7 @@
             <script src="/assets/lib/aos.js"></script>
             <script src="/assets/js/main.js"></script>
             <script>
-                
+
 
                 email1.addEventListener('input', () => {
                     let inputValue = email1.value;
@@ -278,8 +282,8 @@
                     }
                 }
 
-              
-                
+
+
 
 
                 // sweetAlert
@@ -293,6 +297,7 @@
                 }
 
                 document.getElementById('submit').addEventListener('click', function () {
+                    
 
                     const name = document.getElementById('name').value;
                     const mail1 = document.getElementById('email1').value;
@@ -324,6 +329,8 @@
                     } else if (!agreeCheck.checked) {
                         sweetAlert('개인정보처리방침에 동의 해주세요.', '', 'info', '확인')
                     } else {
+                        const spinner = document.querySelector('.spinner');
+                        spinner.style.display = 'flex';
                         const formData = new FormData();
                         formData.append('name', name);
                         formData.append('email', email);
@@ -349,15 +356,18 @@
                                 'Content-Type': 'multipart/form-data'
                             }
                         })
-                            .then(function (response) {
+                            .then(function (response) { 
+                                const spinner = document.querySelector('.spinner');
+                                spinner.style.display = 'none';
                                 Swal.fire({
                                     title: 'Success!!',
                                     text: `${response.data.success}`,
                                     icon: 'success',
                                     confirmButtonText: '확인',
                                 })
-                                .then( (result) => {
+                                .then((result) => {
                                     location.reload();
+                                    window.scrollTo(0, 0);
                                 })
                             })
 
@@ -396,6 +406,7 @@
                                 //     }
                                 // })
                             });
+                            
 
                     }
 
