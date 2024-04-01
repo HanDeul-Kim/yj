@@ -82,7 +82,7 @@ async function sendEmail(name, email, tel, title, content, files) {
         <tbody><tr><td>
             <table style="              display: table;              margin: 0 auto;              text-align: center;              border-spacing: 0;              width: 100%;              table-layout: fixed;            ">
               <tbody><tr><td>
-                  <a style="display:block; margin-bottom:24px; target="_blank"> 
+                  <a href="https://www.yjinno.co.kr/" style="display:block; margin-bottom:24px; target="_blank"> 
                   <img src="https://handeul-kim.github.io/yj/assets/img/logo.png" width="25%" style=" padding:10px 8px; background-color:#000;" alt="yj logo" loading="lazy">
                   </a>
                 </td></tr>
@@ -168,6 +168,4 @@ app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
 });
 
-// 해야할꺼
-// 사진첨부 많이 할 때 비동기 로딩
 
