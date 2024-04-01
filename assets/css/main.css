@@ -2402,17 +2402,7 @@ textarea::-webkit-scrollbar-thumb {
     margin-top: 40px;
     margin-bottom: 40px;
 }
-.swal2-html-container {
-    text-align: center;
-    color:#fff;
-}
-.swal2-image {
-    margin-bottom: 40px;
-}
-.swal2-confirm .swal2-styled {
-    outline: none !important;
-    border: none !important;
-}
+
 @media(max-width:1386px) {
     .service-gallery {
         grid-template-columns:repeat(4, 1fr);
@@ -2506,6 +2496,23 @@ textarea::-webkit-scrollbar-thumb {
         transform: rotate(360deg);
     }
 }
-
+/* sweetalert2 */
+.swal2-html-container {
+    text-align: center;
+    color:#fff;
+}
+.swal2-image {
+    margin-bottom: 40px;
+}
+.swal2-confirm .swal2-styled {
+    outline: none !important;
+    border: none !important;
+}
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.swal2-popup {
+    animation:  none !important;
+}
 
 

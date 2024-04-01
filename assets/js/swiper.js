@@ -31,6 +31,23 @@ const swiper = new Swiper(".mySwiper", {
     },
 });
 
+const mBannerSwiper = new Swiper('.mBannerSwiper', {
+    loop: true,
+    direction: 'horizontal',
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    slidesPerView: 1.2,
+    spaceBetween: 24,
+    breakpoints: {
+        768: {
+            slidesPerView:2.2,
+            spaceBetween: 40,
+        }
+    }
+})
+
 
 // 솔루션 swiper
 let image = [];
