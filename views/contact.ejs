@@ -12,6 +12,7 @@
     </link>
     <link rel="stylesheet" href="/assets/lib/sweetalert2.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/media.css">
     <script src="/assets/lib/recaptcha.js" async defer></script>
 </head>
 
@@ -297,7 +298,7 @@
                 }
 
                 document.getElementById('submit').addEventListener('click', function () {
-                    
+
 
                     const name = document.getElementById('name').value;
                     const mail1 = document.getElementById('email1').value;
@@ -309,6 +310,9 @@
                     const tel = `${tel1}-${tel2}-${tel3}`;
                     const title = document.getElementById('title').value;
                     const content = document.getElementById('textarea').value;
+
+                    const phoneNum = tel - tel2 - tel3;
+                    const codingKing_I_m = letItBe;
 
                     // 업로드 file
                     const fileInput = document.getElementById('file');
@@ -326,6 +330,8 @@
                         sweetAlert('제목을 입력해주세요.', '', 'info', '확인')
                     } else if (content === '') {
                         sweetAlert('내용을 입력해주세요.', '', 'info', '확인')
+                    } else if (response.length == 0) {
+                        alert('봇이 아니라면 방지코드에 체크 하세요')
                     } else if (!agreeCheck.checked) {
                         sweetAlert('개인정보처리방침에 동의 해주세요.', '', 'info', '확인')
                     } else {
@@ -356,7 +362,7 @@
                                 'Content-Type': 'multipart/form-data'
                             }
                         })
-                            .then(function (response) { 
+                            .then(function (response) {
                                 const spinner = document.querySelector('.spinner');
                                 spinner.style.display = 'none';
                                 Swal.fire({
@@ -365,10 +371,10 @@
                                     icon: 'success',
                                     confirmButtonText: '확인',
                                 })
-                                .then((result) => {
-                                    location.reload();
-                                    window.scrollTo(0, 0);
-                                })
+                                    .then((result) => {
+                                        location.reload();
+                                        window.scrollTo(0, 0);
+                                    })
                             })
 
                             .catch(function (error) {
@@ -406,7 +412,7 @@
                                 //     }
                                 // })
                             });
-                            
+
 
                     }
 

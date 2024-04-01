@@ -16,6 +16,7 @@ const shrinkTl = gsap.timeline({
 });
 
 
+
 shrinkTl.to("#business .parallax-wrap", {
     scale: 0.4,
     // duration:0.1
@@ -177,5 +178,4 @@ fileTarget.addEventListener('change', function(event) {
         fileText.innerHTML = fileList;
         filetextSub.innerHTML = `현재 ${totalSizeMB}MB / 최대 15MB (본문 포함)`
     }
-
 });

@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Oxanium&display=swap');
-
-/* font-family: 'Noto Sans KR', sans-serif;
-font-family: 'Oxanium', sans-serif; */
 * {
     padding: 0;
     margin: 0;
@@ -307,7 +304,7 @@ header .select-box li a:hover {
     right: 0;
     bottom: 100px;
     display: flex;
-    z-index: 1;
+    z-index: 3;
     transform: rotate(270deg) translateY(50%);
 }
 
@@ -362,11 +359,24 @@ header .select-box li a:hover {
 .text-wrap:last-child:hover .contact-text {
     width: auto;
     padding: 20px;
-    right: -143%;
+    right: -103%;
 }
 
 #business {
     display: flex;
+}
+.m_business {
+    display:none !important;
+}
+.m_business .swiper-slide {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.m_business .swiper-slide img {
+    width: 100%;
+}
+.m_mission {
+    width: 100% !important;
 }
 
 #business {
@@ -951,7 +961,7 @@ footer {
 }
 
 .sol-tit {  
-    border-bottom: 2px solid #008BF5;
+    /* border-bottom: 2px solid #008BF5; */
     padding-bottom: 32px;
 }
 .sol-tit p {
@@ -1020,7 +1030,6 @@ footer {
 }
 
 .sol-content-top h1 {
-    font-family: "Malgun Gothic";
     font-size: 60px;
     font-weight: 700;
     color: transparent;
@@ -1034,7 +1043,9 @@ footer {
     color: #fff;
     font-size: 18px;
 }
-
+.sol-content-bottom,.sol-content-top {
+    filter: drop-shadow(0 0 8px rgb(0,0,0,0.6));
+}
 .sol-list li.active {
     flex: 0.5;
 }
@@ -1163,7 +1174,7 @@ table td {
     display:flex;
     flex-direction: column;
     gap:16px;
-    padding-top: 12px;
+    /* padding-top: 12px; */
 }
 .sol-history .project li {
     font-size: 16px;
@@ -1303,7 +1314,7 @@ table td {
     opacity: 1;
     visibility: visible;
 }
-.service-gallery .gallery-content {
+/* .service-gallery .gallery-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -1336,6 +1347,33 @@ table td {
 }
 .service-gallery .gallery-content .view-more {
     width:auto;
+} */
+.service-gallery li {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.service-gallery .gallery-content {
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+.service-gallery .gallery-content h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+.service-gallery .gallery-content .view-more {
+    align-self: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
 }
 .solution-list-wrap {
     padding: 0 20px 200px 20px;
@@ -1633,7 +1671,7 @@ table td {
 }
 
 .m-gnb-header li .contact {
-    background-color: #046CBC;
+    background-color: #008bf5;
 }
 
 .m-gnb-header li button {
@@ -1733,8 +1771,8 @@ table td {
 }
 .solution-items > li {
     display:flex;
-    gap:48px;
-    padding:20px;
+    gap:24px;
+    padding:24px;
     box-shadow: 0px 4px 24px 4px #02376414;
     border-radius: 20px;
     background-color: #fff;
@@ -1764,13 +1802,16 @@ table td {
     flex:0.5;
     gap:36px;
 }
+.solution-item-info:nth-child(2){
+    padding-right: 8px;
+}
 .solution-item-info:nth-child(2) {
     border-right: 1px solid #F4F4F5;
 }
 .solution-item-info .info-head {
     font-size: 18px;
     font-weight: 700;
-    color:#035396;
+    color:#008BF5;
     white-space: nowrap;
 }
 .solution-item-info .info-list {
@@ -1942,7 +1983,7 @@ table td {
 }
 .note-book {
     position: relative;
-    min-width: 700px;
+    /* min-width: 700px; */
     margin: 0 auto;
 }
 .frame {
@@ -2098,6 +2139,7 @@ table td {
     flex: 1 1 auto;
     padding: 12px 16px;
     border: 1px solid #D0D2D7;
+    outline: none;
     color:#63656E;
 }
 .input-group input::placeholder,
