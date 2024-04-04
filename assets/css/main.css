@@ -2645,3 +2645,6 @@ textarea::-webkit-scrollbar-thumb {
 .footer-top-right ul li strong, .footer-top-right ul li p {
     word-break: break-all;
 }
+
+
+/* sweet-alert 크기 조정 해야 함 */

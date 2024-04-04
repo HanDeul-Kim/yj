@@ -758,4 +758,29 @@
     .input-group textarea {
         min-height: 150px;
     }
+    .swal2-popup {
+        width: 90%;
+        height: 50%;
+    }
+    .swal2-icon {
+        width: 60px;
+        height: 60px;
+        margin: 20px auto 20px;
+    }
+    .swal2-icon .swal2-icon-content {
+        font-size: 45px;
+    }
+    .swal2-title {
+        font-size: 24px;
+    }
+    .swal2-styled {
+        padding:10px 20px;
+    }
+    .swal2-styled.swal2-confirm {
+        outline: none !important;
+        border: none !important;
+    }
+    .swal2-actions {
+        margin: 0;
+    }
 }
