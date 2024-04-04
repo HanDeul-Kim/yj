@@ -46,16 +46,19 @@ shrinkTl.to("#business .parallax-wrap", {
 
 /*모바일 비즈니스 scroll down */
 const scrollDown = document.querySelector('.m_business .scroll-down');
-scrollDown.addEventListener('click', (event) => {
-    event.preventDefault();
-    console.log('go to bottom');
+if(scrollDown) {
+    scrollDown.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log('go to bottom');
+    
+    
+        const totalHeight = document.documentElement.clientHeight; 
+        const bannerTop = document.querySelector('.mBannerSwiper').offsetTop;
+    
+        window.scrollTo({top: totalHeight + bannerTop, left:0, behavior: 'smooth'})
+    });
+}
 
-
-    const totalHeight = document.documentElement.clientHeight; 
-    const bannerTop = document.querySelector('.mBannerSwiper').offsetTop;
-
-    window.scrollTo({top: totalHeight + bannerTop, left:0, behavior: 'smooth'})
-});
 
 
 const fixMotion2 = gsap.timeline({

@@ -733,5 +733,29 @@
     .banner-subtitle br{display: none;}
     .m_business .business_banner .banner-subtitle{width: 85%;}
     .m_business .card-cont{padding:24px 16px; }
-
+    /* contact */
+    .input-group input, .input-group select, .input-group textarea {
+        height: 44px;
+        padding: 8px;
+    }    
+    .input-box select {
+        font-size: 12px;
+        background: url('../img/input_select.png') no-repeat calc(100% - 4px) center;
+    }
+    .input-btn-black, .input-btn-white {
+        height: auto;
+    }
+    .file-name {
+        font-size: 12px;
+    }
+    .input-group input::placeholder,
+    .input-group select {
+        color:#63656e;
+    }
+    .input-group option {
+        color:#000;
+    }
+    .input-group textarea {
+        min-height: 150px;
+    }
 }
