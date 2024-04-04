@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Oxanium&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Oxanium', sans-serif; */
 * {
     padding: 0;
     margin: 0;
@@ -212,12 +214,16 @@ header .select-box li a:hover {
     font-weight: 500;
     color:#fff;
 }
+#main .video_banner {
+    min-height: calc(100vh - 80px);
+}
 .banner.main {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    min-height: calc(100vh - 80px);
     color: #fff;
     overflow: hidden;
 }
@@ -228,13 +234,13 @@ header .select-box li a:hover {
 
 .banner.main .content .tit {
     font-weight: 700;
-    font-size: 44px;
+    font-size: 36px;
     margin-bottom: 16px;
 }
 
 .banner.main .content .sub-tit {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .banner.main .swiper {
@@ -271,7 +277,7 @@ header .select-box li a:hover {
 
 .banner.main .swiper-pagination {
     position: absolute;
-    bottom: 80px !important
+    bottom: 50px !important
 }
 
 .banner.main .swiper-pagination .swiper-pagination-bullet {
@@ -374,15 +380,18 @@ header .select-box li a:hover {
 }
 .m_business .swiper-slide img {
     width: 100%;
+    /* display:flex; */
 }
 .m_mission {
-    width: 100% !important;
+    display: none !important;
 }
-
 #business {
     width: 100% !important;
 }
-
+.m-business {
+    width: 100% !important;
+    display:none;
+}
 #business .parallax-wrap img {
     width: 100% !important;
 }
@@ -398,14 +407,14 @@ header .select-box li a:hover {
     gap: 64px;
     color: #fff;
 }
-
 [class*="parallax-tit"] .tit {
-    font-size: 56px;
+    font-size: 36px;
     font-weight: 700;
+    margin-bottom: 16px;
 }
 
 [class*="parallax-tit"] .sub-tit {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -427,12 +436,14 @@ header .select-box li a:hover {
 @keyframes scrollDown {
     from {
         transform: rotate(90deg) translate3d(0, 5px, 0);
+        transform: rotate(90deg) translate3d(0, 5px, 0);
     }
 
     to {
         transform: rotate(90deg) translate3d(0, -5px, 0);
     }
 }
+
 
 @keyframes dot {
     0% {
@@ -486,12 +497,14 @@ header .select-box li a:hover {
 }
 
 [class*="p-box"] {
+    display:inline-flex;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
+    /* padding-right: 100%; */
 }
 
 [class*="parallax-tit"] {
@@ -499,9 +512,14 @@ header .select-box li a:hover {
     top: 50%;
     transform: translateY(-50%);
 }
-
+[class*="p-box"] {
+    transform: scale(1);
+}
+[class*="parallax-img"] {
+    /* transform: scale(0.85) !important; */
+}
 .parallax-tit1 {
-    right: 25%;
+    right: 50%;
     transform: translate(50%, -50%);
 }
 
@@ -509,6 +527,7 @@ header .select-box li a:hover {
     left: -100%;
     display: flex;
     justify-content: center;
+    /* justify-content: flex-end; */
 }
 
 [class*="parallax-img"] {
@@ -518,14 +537,15 @@ header .select-box li a:hover {
     justify-content: center;
     align-self: center;
     width: 100%;
-    height: 100%;
-    transform: scale(0.4);
+    /* height: 100%; */
+    /* transform: scale(0.4); */
+    transform: scale(1);
     z-index: 1;
 }
 
 [class*="parallax-img"] img {
     /* width: 100%; */
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
 }
 
@@ -668,7 +688,7 @@ header .select-box li a:hover {
 
 .sc_intro .img_area .img01 .txt_wrap p {
     word-break: keep-all;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.4;
     font-weight: 500;
     margin-bottom: 24px;
@@ -762,13 +782,14 @@ header .select-box li a:hover {
 }
 
 .mission-tit h1 {
-    font-size: 44px;
+    font-size: 36px;
     font-weight: 700;
     color: #fff;
+    margin-bottom: 16px;
 }
 
 .mission-tit h2 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     color: #fff;
 }
@@ -919,7 +940,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 360px;
     margin-bottom: 96px;
 }
 
@@ -1030,7 +1051,7 @@ footer {
 }
 
 .sol-content-top h1 {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: 1px #fff;
@@ -1057,7 +1078,9 @@ footer {
 .sol-list li.active .sol-content {
     background: none;
 }
-
+.sol-list li .sol-content-bottom p {
+    font-size: 18px;
+}
 .sol-list li.active .sol-content-top,
 .sol-list li.active .sol-content-bottom {
     animation: fadeInUp 1s;
@@ -1110,7 +1133,7 @@ footer {
     color: #008BF5;
 }
 .sec2 .tit-wrap p {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 48px;
 }
 table {
@@ -1174,7 +1197,7 @@ table td {
     display:flex;
     flex-direction: column;
     gap:16px;
-    /* padding-top: 12px; */
+    padding-top: 12px;
 }
 .sol-history .project li {
     font-size: 16px;
@@ -1189,6 +1212,7 @@ table td {
 }
 .sol-history .project li .sub-year {
     font-weight: 700;
+    font-size: 20px;
 }
 .sol-history .project li div > ul {
     margin-top: 10px;
@@ -1512,6 +1536,7 @@ table td {
     padding: 32px 40px;
 } 
 .model-lists li span{
+    text-align: center;
     font-size: 18px;
     font-weight: 400;
 }
@@ -2400,9 +2425,66 @@ textarea::-webkit-scrollbar-thumb {
     font-weight: 600;
     font-size: 18px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
+@media (max-width: 1600px) {
+    [class*="parallax-img"] {
+        transform: scale(0.7);
+    }
+    [class*="p-box"].visual {
+        transform: scale(0.9);
+    }
+    .stroke span {
+        font-size: 40px;
+    }
+    .sc_intro .img_area .img01 .txt_wrap p,
+    .sc_intro .img_area .img02 .txt_wrap p,
+    .sc_intro .img_area .img03 .txt_wrap p {
+        font-size: 16px;
+    }
 
+    
+    .sc_intro .img_area {
+        width:100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: center !important;
+        padding: 0 20px;
+        gap: 40px;
+    }
+    .sc_intro .img_area .img01 {
+        width: max(25%, 15vw) !important;
+        /* margin-left: 5vw; */
+        margin-top: 70px !important;
+    }
+    .sc_intro .img_area .img02 {
+        width: max(30%, 10vw) !important;
+        margin-top: 70px !important;
+    }
+    .sc_intro .img_area .img03 {
+        width: max(25%, 15vw) !important;
+        /* margin-right: 5vw; */
+        margin-top: 70px !important;
+    }
+    .sc_intro .img_area .img01 .img_wrap {
+        margin-bottom: 60px !important;
+    }
+    .sc_intro .img_area .img02 .img_wrap {
+        margin-bottom: 60px !important;
+    }
+    .sc_intro .img_area .img03 .img_wrap {
+        margin-bottom: 60px !important;     
+    }
+
+
+
+
+
+
+}
 @media(max-width:1386px) {
     .service-gallery {
         grid-template-columns:repeat(4, 1fr);
@@ -2516,3 +2598,45 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 
+
+
+.sc_intro .img_area {
+    width:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-around;
+    padding: 0 20px;
+    gap: 40px;
+}
+.sc_intro .img_area .img01 {
+    width: max(350px, 20vw);
+    /* margin-left: 5vw; */
+    margin-top: 250px;
+}
+.sc_intro .img_area .img02 {
+    width: max(250px, 30vw);
+    margin-top: 20px;
+}
+.sc_intro .img_area .img03 {
+    width: max(350px, 20vw);
+    /* margin-right: 5vw; */
+    margin-top: 200px;
+}
+.sc_intro .img_area .img01 .img_wrap {
+    margin-bottom: 80px;
+}
+.sc_intro .img_area .img02 .img_wrap {
+    margin-bottom: 80px;
+}
+.sc_intro .img_area .img03 .img_wrap {
+    margin-bottom: 80px;
+}
+
+
+
+/* 해야할거 */
+/* sc_intro max-width: 1600부터 사이즈 조정 확인 */
+/* parallax 덜컥 거리는거 해결 */

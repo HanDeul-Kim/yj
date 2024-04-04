@@ -15,7 +15,6 @@ const shrinkTl = gsap.timeline({
     },
 });
 
-
 shrinkTl.to("#business .parallax-wrap", {
     scale: 0.4,
     // duration:0.1
@@ -25,10 +24,10 @@ shrinkTl.to("#business .parallax-wrap", {
     left: "-100%",
 }, '-=100%').to("#business .p-box1", {
     left: "100%",
-}, '-=100%').to("#business .parallax-img1", {
+}, '-=50%').to("#business .parallax-img1", {
     left: "-100%",
 }, '-=100%').to("#business .p-box2", {
-    left: "100%",
+    left: "100%",  
 }, '-=50%').to("#business .parallax-img2", {
     left: "-100%",
 }, '-=100%').to("#business .p-box3", {
@@ -46,17 +45,16 @@ shrinkTl.to("#business .parallax-wrap", {
 }, '-=100%')
 
 /*모바일 비즈니스 scroll down */
+const scrollDown = document.querySelector('.m_business .scroll-down');
+scrollDown.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('go to bottom');
 
-$(function () {
 
-    $('.m_business .scroll-down').click(function () {
+    const totalHeight = document.documentElement.clientHeight; 
+    const bannerTop = document.querySelector('.mBannerSwiper').offsetTop;
 
-        $('html, body').animate({ scrollTop: $('.mBannerSwiper').offset().top }, 'slow');
-
-        return false;
-
-    });
-
+    window.scrollTo({top: totalHeight + bannerTop, left:0, behavior: 'smooth'})
 });
 
 
@@ -87,7 +85,7 @@ fixMotion2.from('.sc_intro .img_area .img02 img', { scale: 5, yPercent: 50 })
 
 const solList = document.querySelectorAll('.sol-list li');
 solList.forEach((e, idx) => {
-    e.addEventListener('click', (ef) => {
+    e.addEventListener('click', () => {
 
         for (let i = 0; i < solList.length; i++) {
             solList[i].classList.remove('active')
@@ -96,7 +94,6 @@ solList.forEach((e, idx) => {
     })
 })
 AOS.init()
-
 
 
 
@@ -201,8 +198,10 @@ if (document.querySelector('.form-area')) {
         for (let i = 0; i < files.length; i++) {
             fileArr.push(files[i].name)
         }
+
         const fileList = fileArr.join('<br>')
         const fileText = document.querySelector('.file-name');
+        
         if(files.length > 50) {
             Swal.fire({
                 title: '파일첨부 실패!',
@@ -217,17 +216,5 @@ if (document.querySelector('.form-area')) {
         }
     })
 
-    // if (files.length > 30) {
-    //     Swal.fire({
-    //         title: 'Error!!',
-    //         text: `최대 50개까지 첨부 가능합니다.`,
-    //         icon: 'error',
-    //         confirmButtonText: '확인',
-    //     })
-    //     this.value = '';
-    //     fileText.innerHTML = '파일첨부 : 용량 15MB 이하만 업로드 가능';
-    // } else {
-    //     fileText.innerHTML = fileList;
-    // }
 }
 
