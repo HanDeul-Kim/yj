@@ -779,6 +779,7 @@
     .swal2-styled.swal2-confirm {
         outline: none !important;
         border: none !important;
+        -webkit-app-region: no-drag !important;
     }
     .swal2-actions {
         margin: 0;
