@@ -106,10 +106,8 @@
     .mySwiper2 .swiper-pagination{
         margin-top: 24px;
     }
-
     /*푸터*/
-    
-    .footer-top{
+    .footer-top{ 
         padding: 32px 0 40px;
         flex-direction: column;
         gap: 32px;
@@ -267,6 +265,9 @@
         word-break: keep-all;
         margin:20px auto;
     }
+    .m_business .business_banner .banner-subtitle br {
+        display: none;
+    }
 
     .m_business .scroll-down {
         opacity: 1;
@@ -359,7 +360,7 @@
     }
     .m_mission{
         display: block !important;
-        background-color: #000;;
+        background-color: #000;
         padding-top: 84px;
     }
     .m_mission h1{
@@ -374,7 +375,7 @@
         padding:20px;
         text-align: center ;
         word-break: keep-all;
-        margin-bottom: 60px;;
+        margin-bottom: 60px;
     }
     .m_mission h2 strong{
         color:#008BF5;
@@ -388,6 +389,7 @@
     }
     .m_mission .img_right{
         display: flex;
+        
         flex-direction: column;
         align-items: flex-end;
     }
@@ -415,7 +417,7 @@
     }
     .m_mission .txt_wrap .txt_01 {
         color:#fff;
-        font-size: 16px;
+        font-size: 18px;
     }
     #call{
         padding:72px 0 140px;
@@ -440,8 +442,6 @@
     .contact-me .contact_right img{
         content: url('../img/read_more_sm.svg');
     }
-    
-
     /*contact*/
     .form-main .col-group{
         flex-wrap: wrap;
@@ -638,7 +638,7 @@
         margin-bottom: 32px;
     }
     .information-content > ul > li > h2{
-        margin-bottom: 0;;
+        margin-bottom: 0;
     }
     .lg-tit{
         margin-bottom: 8px;
@@ -783,5 +783,8 @@
     }
     .swal2-actions {
         margin: 0;
+    }
+    #call {
+        background: url('../img/callme.png') no-repeat center center / cover;
     }
 }

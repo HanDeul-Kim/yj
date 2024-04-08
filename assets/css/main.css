@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Oxanium&display=swap');
-/* font-family: 'Noto Sans KR', sans-serif;
-font-family: 'Oxanium', sans-serif; */
+/*archoi 수정*/
+@import url('https://fonts.cdnfonts.com/css/oxanium');
+
 * {
     padding: 0;
     margin: 0;
@@ -1114,13 +1115,13 @@ footer {
     background-position: center 40%;
     /* background-attachment: fixed; */
 }
-.sec2 .layout-md {
+.sec2 .layout-md { 
     position: relative;
 }
 .sec2 .tit-wrap {
     position: absolute;
     top: -40px;
-    right: 0;
+    right: 16px;
     color:#fff;
 }
 .sec2 .tit-wrap h1 {
@@ -1196,7 +1197,7 @@ table td {
     display:flex;
     flex-direction: column;
     gap:16px;
-    padding-top: 12px;
+    /* padding-top: 12px; */
 }
 .sol-history .project li {
     font-size: 16px;
@@ -2636,15 +2637,18 @@ textarea::-webkit-scrollbar-thumb {
 /* .footer-wrap .layout-md {
     padding: 0;
 } */
-/* 해야할거 */
-/* sc_intro max-width: 1600부터 사이즈 조정 확인 */
-/* parallax 덜컥 거리는거 해결 */
-.footer-top-right {
-    width: 100%;
-}
 .footer-top-right ul li strong, .footer-top-right ul li p {
     word-break: break-all;
 }
-
-
 /* sweet-alert 크기 조정 해야 함 */
+
+/* input number 화살표 제거 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
