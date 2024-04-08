@@ -459,6 +459,7 @@
     .input-privacy{
         padding: 16px;
     }
+    
 }
 
 @media(max-width:800px) {
@@ -671,6 +672,9 @@
     .m_mission h2 br{
         display: none;
     }
+    .swal2-popup {
+        transform: scale(0.85);
+    }
 }
 @media(max-width:600px) {
     .banner.main .content {
@@ -758,31 +762,11 @@
     .input-group textarea {
         min-height: 150px;
     }
-    .swal2-popup {
-        width: 90%;
-        height: 50%;
-    }
-    .swal2-icon {
-        width: 60px;
-        height: 60px;
-        margin: 20px auto 20px;
-    }
-    .swal2-icon .swal2-icon-content {
-        font-size: 45px;
-    }
-    .swal2-title {
-        font-size: 24px;
-    }
-    .swal2-styled {
-        padding:10px 20px;
-    }
+    
     .swal2-styled.swal2-confirm {
         outline: none !important;
         border: none !important;
         -webkit-app-region: no-drag !important;
-    }
-    .swal2-actions {
-        margin: 0;
     }
     #call {
         background: url('../img/callme.png') no-repeat center center / cover;
