@@ -521,6 +521,7 @@ header .select-box li a:hover {
 .parallax-tit1 {
     right: 50%;
     transform: translate(50%, -50%);
+    text-align: center;
 }
 
 [class*="p-box"].visual {
