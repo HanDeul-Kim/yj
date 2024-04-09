@@ -741,9 +741,10 @@
     .input-group input, .input-group select, .input-group textarea {
         height: 44px;
         padding: 8px;
+        font-size: 16px;
     }    
     .input-box select {
-        font-size: 12px;
+        /* font-size: 12px; */
         background: url('../img/input_select.png') no-repeat calc(100% - 4px) center;
     }
     .input-btn-black, .input-btn-white {
