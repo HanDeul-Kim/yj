@@ -194,30 +194,30 @@ if (document.querySelector('.form-area')) {
 
 
     const fileTarget = document.querySelector('#file');
-
-    fileTarget.addEventListener('change', function(event) {
-        const files = event.target.files;
-        const fileArr = [];
-        for (let i = 0; i < files.length; i++) {
-            fileArr.push(files[i].name)
-        }
-
-        const fileList = fileArr.join('<br>')
-        const fileText = document.querySelector('.file-name');
-        
-        if(files.length > 50) {
-            Swal.fire({
-                title: '파일첨부 실패!',
-                text: `최대 50개까지 첨부 가능합니다.`,
-                icon: 'error',
-                confirmButtonText: '확인'
-            })
-            this.value = '';
-            fileText.innerHTML = '파일첨부 : 용량 15MB 이하만 업로드 가능';
-        } else {
-            fileText.innerHTML = fileList;
-        }
-    })
-
+    if(fileTarget) {
+        fileTarget.addEventListener('change', function(event) {
+            const files = event.target.files;
+            const fileArr = [];
+            for (let i = 0; i < files.length; i++) {
+                fileArr.push(files[i].name)
+            }
+    
+            const fileList = fileArr.join('<br>')
+            const fileText = document.querySelector('.file-name');
+            
+            if(files.length > 10) {
+                Swal.fire({
+                    title: '파일첨부 실패!',
+                    text: `최대 10개까지 첨부 가능합니다.`,
+                    icon: 'error',
+                    confirmButtonText: '확인'
+                })
+                this.value = '';
+                fileText.innerHTML = '파일첨부 : 용량 15MB 이하만 업로드 가능';
+            } else {
+                fileText.innerHTML = fileList;
+            }
+        })
+    }
 }
 

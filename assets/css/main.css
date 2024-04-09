@@ -678,9 +678,9 @@ header .select-box li a:hover {
 }
 
 .sc_intro .img_area .img01 {
-    width: max(350px, 20vw);
+    width:25%;
     /* margin-left: 5vw; */
-    margin-top: 250px;
+    margin-top: 10%;
 }
 .sc_intro .img_area .img01 .img_wrap {
     margin-bottom: 80px;
@@ -695,15 +695,13 @@ header .select-box li a:hover {
 
 }
 
-
 .sc_intro .img_area .img02 {
-    width: max(450px, 30vw);
-    margin-top: 20px;
+    /* width: max(450px, 30vw); */
+    width:27%;
 }
 
 .sc_intro .img_area .img02 .img_wrap {
     margin-bottom: 80px;
-
 }
 
 .sc_intro .img_area .img02 .txt_wrap p {
@@ -716,10 +714,10 @@ header .select-box li a:hover {
 
 
 .sc_intro .img_area .img03 {
-    width: max(350px, 20vw);
+    /* width: max(350px, 20vw); */
+    width:25%;
     /* margin-right: 5vw; */
-    margin-top: 200px;
-
+    margin-top: 10%;
 }
 
 .sc_intro .img_area .img03 .img_wrap {
@@ -757,7 +755,7 @@ header .select-box li a:hover {
 
 .stroke {
     position: absolute;
-    bottom: -30px;
+    bottom: -24px;
 }
 
 .stroke span {
@@ -2455,20 +2453,7 @@ textarea::-webkit-scrollbar-thumb {
         padding: 0 20px;
         gap: 40px;
     }
-    .sc_intro .img_area .img01 {
-        width: max(25%, 15vw) !important;
-        /* margin-left: 5vw; */
-        margin-top: 70px !important;
-    }
-    .sc_intro .img_area .img02 {
-        width: max(30%, 10vw) !important;
-        margin-top: 70px !important;
-    }
-    .sc_intro .img_area .img03 {
-        width: max(25%, 15vw) !important;
-        /* margin-right: 5vw; */
-        margin-top: 70px !important;
-    }
+   
     .sc_intro .img_area .img01 .img_wrap {
         margin-bottom: 60px !important;
     }
@@ -2478,12 +2463,6 @@ textarea::-webkit-scrollbar-thumb {
     .sc_intro .img_area .img03 .img_wrap {
         margin-bottom: 60px !important;     
     }
-
-
-
-
-
-
 }
 @media(max-width:1386px) {
     .service-gallery {
@@ -2611,20 +2590,7 @@ textarea::-webkit-scrollbar-thumb {
     padding: 0 20px;
     gap: 40px;
 }
-.sc_intro .img_area .img01 {
-    width: max(350px, 20vw);
-    /* margin-left: 5vw; */
-    margin-top: 250px;
-}
-.sc_intro .img_area .img02 {
-    width: max(250px, 30vw);
-    margin-top: 20px;
-}
-.sc_intro .img_area .img03 {
-    width: max(350px, 20vw);
-    /* margin-right: 5vw; */
-    margin-top: 200px;
-}
+
 .sc_intro .img_area .img01 .img_wrap {
     margin-bottom: 80px;
 }
