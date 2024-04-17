@@ -1411,6 +1411,7 @@ table td {
     width: 400px;
     min-height: 375px;
     border-radius: 20px;
+    border: 1px solid #fff;
 }
 .solution-list li a {
     height: 100%;
