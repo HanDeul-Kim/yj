@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <title>YJ - 온라인문의</title>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <!-- <script src="/assets/lib/recaptcha.js" async defer></script> -->
+    <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+    <link rel="/assets/lib/aos.css">
+    </link>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/media.css">
+    <script src="/assets/lib/recaptcha.js" async defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main>
+            <div class="banner detail contact">
+                <div class="layout-md">
+                    <div class="tit-wrap" data-aos="fade">
+                        <h1 class="tit">Contact</h1>
+                        <p class="sub-tit">
+                            Online Inquiries
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-md">
+                <div class="page-tit type3">
+                    <h2>Online Inquiries</h2>
+                    <p>Contact a professional consultant at YJ Innovation.</p>
+                </div>
+            </div>
+
+            <div class="layout-md">
+                <div class="form-area">
+                    <div class="form-header">
+                        <span>
+                            <div class="emphasis">
+                                <span></span>
+                            </div>
+                            Required Input
+                        </span>
+                    </div>
+                    <!-- action="/api/post/edit" method="POST" -->
+                    <div class="form-main">
+                        <div class="col-group">
+                            <div class="input-group w50">
+                                <label for="name">
+                                    Customer Name
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <input type="text" placeholder="" id="name">
+                            </div>
+                            <div class="input-group email w50">
+                                <label for="email">
+                                    E-mail
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <div class="input-box">
+                                    <input type="text" id="email1" name="email1">
+                                    <span>@</span>
+                                    <input type="text" id="email2" name="email2" readonly>
+                                    <select name="" id="selectEmail" onChange="selectEmail(this)">
+                                        <option value="">Select Address</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="daum.net">daum.net</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="1">Write Address</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-group">
+                            <div class="input-group w50">
+                                <label for="tel">Contact Number</label>
+                                <div class="input-box">
+                                    <select name="" id="tel1">
+                                        <option id="tel" selected>02</option>
+                                        <option>031</option>
+                                        <option>010</option>
+                                        <option>011</option>
+                                        <option>016</option>
+                                        <option>017</option>
+                                        <option>018</option>
+                                        <option>019</option>
+                                    </select>
+                                    <input type="text" id="tel2">
+                                    <span>-</span>
+                                    <input type="text" id="tel3">
+                                </div>
+                            </div>
+                            <div class="input-group w50">
+                                <label for="title">Title
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <input type="text" id="title">
+                            </div>
+                        </div>
+                        <div class="col-group">
+                            <div class="input-group w100">
+                                <label for="">
+                                    Inquiries
+                                    <div class="emphasis">
+                                        <span></span>
+                                    </div>
+                                </label>
+                                <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-group">
+                            <div class="input-group w50">
+                                <div class="input-file">
+                                    <div class="file-tit">
+                                        <label>File attachment</label>
+                                        <span>Only uploads less than 5 MB</span>
+                                    </div>
+                                    <div class="file-content">
+                                        <!-- <input id="fileText" type="text" readonly placeholder="파일첨부 1 : 용량 5MB 이하만 업로드 가능"> -->
+                                        <span class="file-name">Only uploads less than 5 MB</span>
+                                        <label class="input-btn-black" for="file">
+                                            Upload
+                                        </label>
+                                        <input type="file" multiple id="file">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="input-group w50">
+                                <div class="input-spam">
+                                    <div class="file-tit">
+                                        <label for="">
+                                            Anti-spam code
+                                            <div class="emphasis">
+                                                <span></span>
+                                            </div>
+                                        </label>
+                                        <span>Enter the automatic anti-registration numbers in order</span>
+                                    </div>
+                                    <div class="file-content">
+                                        <!-- <div class="spam-img">
+                                        <img src="/assets/img/spam.png" alt="">
+                                    </div>
+                                    <input type="text">
+                                    <label for="" class="input-btn-black">
+                                        숫자음성듣기
+                                    </label>
+                                    <label for="" class="input-btn-white" id="captcha_reload">
+                                        새로고침
+                                    </label> -->
+                                        <div class="g-recaptcha"
+                                            data-sitekey="6LezpY8pAAAAAIWdDkpwwQ0Pa1HcGWsTot1UUyXn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-group">
+                            <div class="input-group w100">
+                                <div class="agree-box">
+                                    <label for="">
+                                        Personal information collection and Usage Agreement
+                                    </label>
+                                    <div class="input-privacy">
+                                        <p>
+                                            YJ Innovation (hereinafter referred to as the "Company") collects and utilizes the minimum necessary personal information for the following reasons.
+                                            - Online inquiry
+
+                                            [The item of personal information that you collect]
+                                            The company collects the following personal information at the time of membership registration.
+                                            - Required: Customer Name, Email
+                                            - Selections: Contacts
+
+                                            [Duration of holding and using personal information]
+                                            Your personal information will be preserved for the following specified periods for the company's continuous start-up consultation and the provision of start-up-related information. However, if you separately require correction, suspension or deletion of your personal information, the company will immediately accept your request in accordance with internal procedures.
+                                            - 3 years from the date of writing
+
+                                            [The right to refuse consent to collect personal information]
+                                            You have the right to refuse to consent to collect this personal information. However, if you refuse to consent to collect personal information that falls under the required items, you will not be able to use online inquiries.
+
+                                        </p>
+                                    </div>
+                                    <p class="input-check">
+                                        <input type="checkbox" name="" id="agree">
+                                        <label for="agree">I agree</label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-submit">
+                            <button type="submit" id="submit">Contact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('footer.ejs') %>
+            <!-- axios cdn -->
+            <!-- <script src="/assets/lib/jquery.min.js"></script>
+    <script src="/assets/lib/axios.min.js"></script>
+    <script src="/assets/lib/gsap.min.js"></script>
+     -->
+
+            <!-- http://localhost:3000/assets/lib/axios.min.js -->
+            <!-- <script src="/assets/lib/axios.min.js"></script> -->
+            <script src="/assets/lib/jquery.min.js"></script>
+            <script src="/assets/lib/axios.min.js"></script>
+            <script src="/assets/lib/gsap.min.js"></script>
+            <script src="/assets/lib/aos.js"></script>
+            <script src="/assets/js/main.js"></script>
+            <script>
+                function selectEmail(ele) {
+                    const email2 = document.querySelector('#email2');
+                    
+                    // '1'인 경우 직접입력
+                    if (ele.value === "1") {
+                        email2.removeAttribute('readonly');
+                        email2.value = '';
+                    } else {
+                        email2.setAttribute('readonly', true);
+                        email2.value = ele.value;
+                    }
+                }
+
+                document.getElementById('submit').addEventListener('click', function () {
+                    const fileInput = document.getElementById('file');
+                    const file = fileInput.files[0]; // 파일 선택
+
+                    const agreeCheck = document.getElementById('agree');
+                    // recaptcha
+                    const response = grecaptcha.getResponse();
+
+                    if (!file) {
+                        alert('파일을 선택해주세요.');
+                    } else if (!agreeCheck.checked) {
+                        alert('개인정보처리방침에 동의 해주세요.');
+                    } else {
+                        const formData = new FormData();
+                        formData.append('file', file); // 파일 추가
+
+                        axios.post('/submit', formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        })
+                            .then(function (response) {
+                                console.log('성공', response.data);
+                                alert('완료하였습니다.')
+                            })
+                            .catch(function (error) {
+                                console.error('Error:', error);
+                                alert('오류가 발생했습니다. 다시 시도해주세요.');
+                            });
+                    }
+                });
+
+
+            </script>
+
+</body>
+
+</html>
