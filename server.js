@@ -20,15 +20,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const upload = multer({ dest: 'uploads/' });
 
-
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
-
 app.get('/:id', (req, res) => {
     const contactId = req.params.id;
     res.render(`${contactId}.ejs`)
 })
+// app.get('/en/:id', (req, res) => {
+//     const contactId2 = req.params.id;
+//     res.render(`en/${contactId2}.ejs`)
+// })
+
+
 
 // app.post('/submit', async (req, res) => {
 //     console.log('데이터:', req.body);

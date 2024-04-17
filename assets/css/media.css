@@ -773,4 +773,7 @@
     #call {
         background: url('../img/callme.png') no-repeat center center / cover;
     }
+    .circle-img img{
+        content: url('../img/m_circle_graph.png');
+    }
 }
