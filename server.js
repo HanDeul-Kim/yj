@@ -30,8 +30,8 @@ app.get('/:id', (req, res) => {
 app.get('/en/:id', (req, res) => {
     const contactId2 = req.params.id;
     res.render(`en/${contactId2}.ejs`)
-    
 })
+
 
 
 // app.post('/submit', async (req, res) => {

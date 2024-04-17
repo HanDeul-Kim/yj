@@ -98,6 +98,7 @@
     }
     .slider-list,.slider-list ul{
         align-items: center;
+        padding:10px;
     }
     .layout-md.visible.card + .layout-md.visible.card{
         margin-top: 80px;
