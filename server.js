@@ -27,10 +27,10 @@ app.get('/:id', (req, res) => {
     const contactId = req.params.id;
     res.render(`${contactId}.ejs`)
 })
-// app.get('/en/:id', (req, res) => {
-//     const contactId2 = req.params.id;
-//     res.render(`en/${contactId2}.ejs`)
-// })
+app.get('/en/:id', (req, res) => {
+    const contactId2 = req.params.id;
+    res.render(`en/${contactId2}.ejs`)
+})
 
 
 
@@ -79,7 +79,7 @@ async function sendEmail(name, email, tel, title, content, files) {
         auth: { user: process.env.KEY_ID, pass: process.env.KEY_PASSWORD },
     })
 
-
+    
     let htmlContent = 
         `
         <table style="       font-family:'나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;    width:100%;    max-width: 800px;                padding: 32px;        font-size: 16px;        border-spacing: 0;        background-color: #f2f5f8;      ">
