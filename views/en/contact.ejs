@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <title>YJ - 온라인문의</title>
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
     <!-- <script src="/assets/lib/recaptcha.js" async defer></script> -->
     <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <link rel="/assets/lib/aos.css">
     </link>
+    <link rel="stylesheet" href="/assets/lib/sweetalert2.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/media.css">
     <script src="/assets/lib/recaptcha.js" async defer></script>
@@ -66,14 +67,14 @@
                                     </div>
                                 </label>
                                 <div class="input-box">
-                                    <input type="text" id="email1" name="email1">
+                                    <input type="email" id="email1" name="email1" required>
                                     <span>@</span>
-                                    <input type="text" id="email2" name="email2" readonly>
-                                    <select name="" id="selectEmail" onChange="selectEmail(this)">
+                                    <input type="email" id="email2" name="email2" required readonly tabindex="-1">
+                                    <select name="" onChange="selectEmail(this)">
                                         <option value="">Select Address</option>
                                         <option value="naver.com">naver.com</option>
                                         <option value="daum.net">daum.net</option>
-                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="google.com">goole.com</option>
                                         <option value="1">Write Address</option>
                                     </select>
                                 </div>
@@ -81,21 +82,20 @@
                         </div>
                         <div class="col-group">
                             <div class="input-group w50">
-                                <label for="tel">Contact Number</label>
+                                <label>Contact Number</label>
                                 <div class="input-box">
-                                    <select name="" id="tel1">
-                                        <option id="tel" selected>02</option>
-                                        <option>031</option>
-                                        <option>010</option>
-                                        <option>011</option>
-                                        <option>016</option>
-                                        <option>017</option>
-                                        <option>018</option>
-                                        <option>019</option>
+                                    <select name="" onChange="selectTel(this)">
+                                        <option value="02">02</option>
+                                        <option value="031">031</option>
+                                        <option value="051">051</option>
+                                        <option value="010">010</option>
+                                        <option value="1">Write Number</option>
                                     </select>
-                                    <input type="text" id="tel2">
+                                    <input type="number" id="tel1" tabindex="-1" readonly value="02">
                                     <span>-</span>
-                                    <input type="text" id="tel3">
+                                    <input type="number" id="tel2">
+                                    <span>-</span>
+                                    <input type="number" id="tel3">
                                 </div>
                             </div>
                             <div class="input-group w50">
@@ -123,11 +123,11 @@
                                 <div class="input-file">
                                     <div class="file-tit">
                                         <label>File attachment</label>
-                                        <span>Only uploads less than 5 MB</span>
+                                        <span>Only uploads less than 15 MB</span>
                                     </div>
                                     <div class="file-content">
                                         <!-- <input id="fileText" type="text" readonly placeholder="파일첨부 1 : 용량 5MB 이하만 업로드 가능"> -->
-                                        <span class="file-name">Only uploads less than 5 MB</span>
+                                        <span class="file-name">Only uploads less than 15 MB</span>
                                         <label class="input-btn-black" for="file">
                                             Upload
                                         </label>
@@ -173,20 +173,30 @@
                                     </label>
                                     <div class="input-privacy">
                                         <p>
-                                            YJ Innovation (hereinafter referred to as the "Company") collects and utilizes the minimum necessary personal information for the following reasons.
+                                            YJ Innovation (hereinafter referred to as the "Company") collects and
+                                            utilizes the minimum necessary personal information for the following
+                                            reasons.
                                             - Online inquiry
 
                                             [The item of personal information that you collect]
-                                            The company collects the following personal information at the time of membership registration.
+                                            The company collects the following personal information at the time of
+                                            membership registration.
                                             - Required: Customer Name, Email
                                             - Selections: Contacts
 
                                             [Duration of holding and using personal information]
-                                            Your personal information will be preserved for the following specified periods for the company's continuous start-up consultation and the provision of start-up-related information. However, if you separately require correction, suspension or deletion of your personal information, the company will immediately accept your request in accordance with internal procedures.
+                                            Your personal information will be preserved for the following specified
+                                            periods for the company's continuous start-up consultation and the provision
+                                            of start-up-related information. However, if you separately require
+                                            correction, suspension or deletion of your personal information, the company
+                                            will immediately accept your request in accordance with internal procedures.
                                             - 3 years from the date of writing
 
                                             [The right to refuse consent to collect personal information]
-                                            You have the right to refuse to consent to collect this personal information. However, if you refuse to consent to collect personal information that falls under the required items, you will not be able to use online inquiries.
+                                            You have the right to refuse to consent to collect this personal
+                                            information. However, if you refuse to consent to collect personal
+                                            information that falls under the required items, you will not be able to use
+                                            online inquiries.
 
                                         </p>
                                     </div>
@@ -204,49 +214,164 @@
                 </div>
             </div>
         </main>
+        <div class="spinner">
+            <div class="spinner-main"></div>
+            <p>처리중<span>...</span></p>
+        </div>
         <%- include('footer.ejs') %>
-            <!-- axios cdn -->
-            <!-- <script src="/assets/lib/jquery.min.js"></script>
-    <script src="/assets/lib/axios.min.js"></script>
-    <script src="/assets/lib/gsap.min.js"></script>
-     -->
-
-            <!-- http://localhost:3000/assets/lib/axios.min.js -->
-            <!-- <script src="/assets/lib/axios.min.js"></script> -->
             <script src="/assets/lib/jquery.min.js"></script>
+            <script src="/assets/lib/sweetalert2.js"></script>
             <script src="/assets/lib/axios.min.js"></script>
             <script src="/assets/lib/gsap.min.js"></script>
             <script src="/assets/lib/aos.js"></script>
             <script src="/assets/js/main.js"></script>
             <script>
+                email1.addEventListener('input', () => {
+                    let inputValue = email1.value;
+                    let englishAndNumbersOnly = inputValue.replace(/[^a-zA-Z0-9]/g, "");
+                    email1.value = englishAndNumbersOnly;
+
+                    if (inputValue !== englishAndNumbersOnly) {
+                        Swal.fire({
+                            title: 'You can only enter English.',
+                            icon: 'info',
+                            confirmButtonText: 'Check'
+                        })
+                    }
+                })
+                // onlyNumber
+                function onlyNumber(target) {
+                    target.addEventListener('input', () => {
+                        let inputValue = target.value;
+                        let numbersOnly = inputValue.replace(/\D/g, "");
+                        target.value = numbersOnly;
+
+                        if (inputValue !== numbersOnly) {
+                            Swal.fire({
+                                title: 'Only numbers can be entered.',
+                                icon: 'info',
+                                confirmButtonText: 'Check'
+                            })
+                        }
+                    })
+                }
+                const onlyNumInputs = [tel2, tel3];
+                onlyNumInputs.forEach((e) => {
+                    onlyNumber(e);
+                })
+
+                // tel
+                function selectTel(ele) {
+                    const tel1 = document.querySelector('#tel1');
+                    if (ele.value === "1") {
+                        tel1.removeAttribute('tabindex')
+                        tel1.removeAttribute('readonly');
+                        tel1.value = '';
+                    } else {
+                        tel1.setAttribute('tabindex', '-1')
+                        tel1.setAttribute('readonly', true);
+                        tel1.value = ele.value;
+                    }
+                }
+                // email
                 function selectEmail(ele) {
                     const email2 = document.querySelector('#email2');
-                    
+
                     // '1'인 경우 직접입력
                     if (ele.value === "1") {
+                        email2.removeAttribute('tabindex');
                         email2.removeAttribute('readonly');
                         email2.value = '';
                     } else {
+                        email2.setAttribute('tabindex', '-1');
                         email2.setAttribute('readonly', true);
                         email2.value = ele.value;
                     }
                 }
 
-                document.getElementById('submit').addEventListener('click', function () {
-                    const fileInput = document.getElementById('file');
-                    const file = fileInput.files[0]; // 파일 선택
 
+
+
+
+                // sweetAlert
+                function sweetAlert(title, text, icon, buttonText) {
+                    Swal.fire({
+                        title: title,
+                        text: text,
+                        icon: icon,
+                        confirmButtonText: buttonText,
+                        // showClass: {
+                        //     popup: `
+
+                        //     `
+                        // },
+                        // hideClass: {
+                        //     popup: `
+
+                        //     `
+                        // }
+                    })
+                }
+
+                document.getElementById('submit').addEventListener('click', function () {
+
+
+                    const name = document.getElementById('name').value;
+                    const mail1 = document.getElementById('email1').value;
+                    const mail2 = document.getElementById('email2').value;
+                    const email = `${mail1}@${mail2}`;
+                    const tel1 = document.getElementById('tel1').value;
+                    const tel2 = document.getElementById('tel2').value;
+                    const tel3 = document.getElementById('tel3').value;
+                    const tel = `${tel1}-${tel2}-${tel3}`;
+                    const title = document.getElementById('title').value;
+                    const content = document.getElementById('textarea').value;
+
+
+                    // 업로드 file
+                    const fileInput = document.getElementById('file');
+                    const files = fileInput.files; // 파일들 선택
+                    // 개인정보동의
                     const agreeCheck = document.getElementById('agree');
                     // recaptcha
                     const response = grecaptcha.getResponse();
 
-                    if (!file) {
-                        alert('파일을 선택해주세요.');
-                    } else if (!agreeCheck.checked) {
-                        alert('개인정보처리방침에 동의 해주세요.');
+                    if (name === '') {
+                        sweetAlert('Please enter the customer name.', '', 'info', 'Check')
+                    } else if (mail1 === '' || mail2 === '') {
+                        sweetAlert('Please enter your mail.', '', 'info', 'Check')
+                    } else if (title === '') {
+                        sweetAlert('Please enter a title.', '', 'info', 'Check')
+                    } else if (content === '') {
+                        sweetAlert('Please enter the content.', '', 'info', 'Check')
+                    }
+                     else if (response.length == 0) {
+                        sweetAlert('If you are not a bot, check the prevention code.', '', 'info', 'Check')
+                    }
+                    else if (!agreeCheck.checked) {
+                        sweetAlert('Please agree to the privacy policy.', '', 'info', 'Check')
                     } else {
+                        const spinner = document.querySelector('.spinner');
+                        spinner.style.display = 'flex';
                         const formData = new FormData();
-                        formData.append('file', file); // 파일 추가
+                        formData.append('name', name);
+                        formData.append('email', email);
+                        formData.append('tel', tel);
+                        formData.append('title', title);
+                        formData.append('content', content);
+
+
+                        // for (let i = 0; i < files.length; i++) {
+                        //     formData.append('file', files[i])
+                        // }
+
+                        // 파일이 선택되었을 때만 FormData에 파일 추가
+                        if (files.length > 0) {
+                            for (let i = 0; i < files.length; i++) {
+                                formData.append('file', files[i]);
+                            }
+                        }
+
 
                         axios.post('/submit', formData, {
                             headers: {
@@ -254,14 +379,59 @@
                             }
                         })
                             .then(function (response) {
-                                console.log('성공', response.data);
-                                alert('완료하였습니다.')
+                                const spinner = document.querySelector('.spinner');
+                                spinner.style.display = 'none';
+                                Swal.fire({
+                                    title: 'Success!!',
+                                    text: `${response.data.success}`,
+                                    icon: 'success',
+                                    confirmButtonText: 'Check',
+                                })
+                                    .then((result) => {
+                                        location.reload();
+                                        window.scrollTo(0, 0);
+                                    })
                             })
+
                             .catch(function (error) {
-                                console.error('Error:', error);
-                                alert('오류가 발생했습니다. 다시 시도해주세요.');
+                                Swal.fire({
+                                    title: 'Error!!',
+                                    text: `${error.response.data.errorType}`,
+                                    confirmButtonText: 'Check',
+                                    imageUrl: '/assets/img/logo.png',
+                                    imageWidth: 'auto',
+                                    imageHeight: 'auto',
+                                    imageAlt: 'Error Image',
+                                })
+                                // Swal.fire({
+                                //     title: 'Error!!',
+                                //     text: `정말로 보내시겠습니까?`,
+                                //     imageUrl: '/assets/img/logo.png',
+                                //     imageWidth: 'auto',
+                                //     imageHeight: 'auto',
+                                //     imageAlt: '에러 이미지',EW
+                                //     showCancelButton: true,
+                                //     confirmButtonText: '확인',
+                                //     cancelButtonText: '취소',
+                                //     confirmButtonColor: "#0a0a0a",
+                                //     cancelButtonColor: "red"
+                                // })
+                                // .then((result) => {
+                                //     if(result.isConfirmed) {
+                                //         Swal.fire({
+                                //             text:'confirm',
+                                //         })
+                                //     } else if (result.inDismissed) {
+                                //         swal.fire({
+                                //             text:'cancel'
+                                //         })
+                                //     }
+                                // })
                             });
+
+
                     }
+
                 });
 
 
